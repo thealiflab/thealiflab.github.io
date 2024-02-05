@@ -1,4 +1,4 @@
-# index.php
+# Personal Website
 Personal Website
 
-Webpage URL: https://thealiflab.github.io/index.php/
+Webpage URL: https://thealiflab.github.io/
