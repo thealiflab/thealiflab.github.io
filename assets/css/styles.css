@@ -1230,6 +1230,7 @@ body {
 
 .mh-progress {
   margin-bottom: 10px;
+  margin-inline: 20px;
   font: 900 1.1428571429em/1 Cinzel, cursive; }
   .mh-progress .progressbar-text {
     color: inherit !important; }
@@ -1248,7 +1249,7 @@ body {
   transform: translateY(-35%);
   text-align: center; }
 
-.mh-progress.mh-progress-circle {
+.mh-progress .mh-progress-circle {
   display: inline-block;
   width: 100px;
   height: 100px; }
