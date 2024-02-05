@@ -273,7 +273,7 @@ a {
   padding: 20px 0; }
 
   section {
-    padding: 60px 0;
+    padding: 10px 0;
     padding-bottom: 30px;
 }
 
@@ -1075,7 +1075,7 @@ body {
     margin: 0 10px;
 }
 .mh-home .mh-header-info {
-  padding-top: 100px; }
+  padding-top: 10px; }
   .mh-home .mh-header-info .mh-promo {
     margin-bottom: 30px; }
     .mh-home .mh-header-info .mh-promo span {
