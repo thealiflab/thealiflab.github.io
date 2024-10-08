@@ -50,6 +50,9 @@
   <!-- JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+  <!-- Contact Form -->
+   <script src="assets/myjs/submitform.js"></script>
+
   <!-- Disable right click -->
   <!-- <script>document.addEventListener('contextmenu', event => event.preventDefault());</script> -->
 
@@ -101,9 +104,9 @@
                 <a class="nav-link" href="#mh-certificate">Certificates</a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="#mh-blog">Blog</a>
-              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="blog/index.html">Blog</a>
+              </li> -->
 
               <li class="nav-item">
                 <a class="nav-link" href="#mh-contact">Contact</a>
@@ -145,7 +148,7 @@
               </div>
 
               <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Ahmed Alif Swopno</h2>
-              <h5 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">Ambivert | Developer | Research Enthusiast</h5>
+              <h5 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">ML & AI Enthusiast | App Developer</h5>
 
               <ul>
                 <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fa fa-envelope"></i><a href="mailto:ahmedalif1010@gmail.com">alif09.au@gmail.com</a></li>
@@ -948,7 +951,9 @@
                 </div>
                 
                 <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                  <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+
+                  <!-- Third Pary Service for form submission -->
+                  <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="validator" action="https://formspree.io/f/mgvewpgv" method="POST">
                     <div id="msgSubmit" class="h3 text-center hidden"></div>
                     <div class="row">
                       <div class="col-sm-12">
@@ -960,7 +965,7 @@
                       </div> -->
 
                       <div class="col-sm-12">
-                        <input name="name" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+                        <input name="email" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
                       </div>
 
                       <div class="col-sm-12">
@@ -973,6 +978,7 @@
                       </div>
                     </div>
                   </form>
+                  <div id="resultMessage" style="display: none;">Thank you for your message!</div>
                 </div>
 
                 <div class="col-sm-12 mh-copyright wow fadeInUp">
