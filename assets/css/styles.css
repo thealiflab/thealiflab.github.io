@@ -1163,6 +1163,12 @@ body {
     text-align: center;
     border: 15px solid rgba(5, 108, 226, 0.17);
     border-radius: 50%; } */
+
+.myintrotext{
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .mh-home .img-border {
   height: 350px;
   width: 350px;
