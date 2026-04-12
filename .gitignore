@@ -1,0 +1,31 @@
+# WordPress and development artifacts
+*.log
+*.cache
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node modules (if you ever add a build step)
+node_modules/
+npm-debug.log
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local environment files
+.env
+.env.local
+wp-config.php
+
+# Compiled/minified files (we keep originals only)
+*.min.js
+*.min.css
+
+# OS files
+.DS_Store
+
+# Custom
+CLAUDE.md
