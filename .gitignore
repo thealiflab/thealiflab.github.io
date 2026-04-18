@@ -26,6 +26,3 @@ wp-config.php
 
 # OS files
 .DS_Store
-
-# Custom
-CLAUDE.md
