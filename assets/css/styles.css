@@ -3672,6 +3672,39 @@ BLOG Single Post Pagination
   display: none;
 }
 
+/* Hidden by show-more collapse */
+.proj-card.proj-hidden-more {
+  display: none;
+}
+
+/* Show More / Less button */
+.proj-show-more-wrap {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.proj-show-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 36px;
+  border-radius: 32px;
+  border: 2px solid #1089ff;
+  background: transparent;
+  color: #1089ff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.22s, color 0.22s, box-shadow 0.22s, transform 0.22s;
+}
+
+.proj-show-more-btn:hover {
+  background: #1089ff;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(16,137,255,0.28);
+  transform: translateY(-2px);
+}
+
 /* =============================================
    Project Detail Modal
    ============================================= */

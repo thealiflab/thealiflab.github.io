@@ -1,28 +1,71 @@
 (function () {
-  var filterBtns = document.querySelectorAll('.proj-filter-btn');
-  var cards = document.querySelectorAll('.proj-card');
-  var backdrop = document.getElementById('projModalBackdrop');
-  var modalClose = document.getElementById('projModalClose');
-  var modalImg = document.getElementById('projModalImg');
-  var modalTitle = document.getElementById('projModalTitle');
-  var modalBadge = document.getElementById('projModalBadge');
-  var modalDesc = document.getElementById('projModalDesc');
-  var modalTags = document.getElementById('projModalTags');
+  var INITIAL_SHOW = 6;
+
+  var filterBtns   = document.querySelectorAll('.proj-filter-btn');
+  var cards        = document.querySelectorAll('.proj-card');
+  var backdrop     = document.getElementById('projModalBackdrop');
+  var modalClose   = document.getElementById('projModalClose');
+  var modalImg     = document.getElementById('projModalImg');
+  var modalTitle   = document.getElementById('projModalTitle');
+  var modalBadge   = document.getElementById('projModalBadge');
+  var modalDesc    = document.getElementById('projModalDesc');
+  var modalTags    = document.getElementById('projModalTags');
   var modalActions = document.getElementById('projModalActions');
+  var showMoreBtn  = document.getElementById('projShowMore');
+
+  var currentFilter = '*';
+  var isExpanded    = false;
+
+  // ── Visibility ──────────────────────────────────────────────────────────────
+  function updateVisibility() {
+    // Cards that pass the current category filter
+    var visibleCards = Array.prototype.filter.call(cards, function (card) {
+      var cls = (card.getAttribute('data-filter-class') || '').split(' ');
+      return currentFilter === '*' || cls.indexOf(currentFilter) !== -1;
+    });
+
+    Array.prototype.forEach.call(cards, function (card) {
+      var cls = (card.getAttribute('data-filter-class') || '').split(' ');
+      var passesFilter = currentFilter === '*' || cls.indexOf(currentFilter) !== -1;
+      card.classList.toggle('proj-hidden', !passesFilter);
+      card.classList.remove('proj-hidden-more');
+    });
+
+    if (!isExpanded) {
+      visibleCards.slice(INITIAL_SHOW).forEach(function (card) {
+        card.classList.add('proj-hidden-more');
+      });
+    }
+
+    // Show / hide button
+    var hasMore = visibleCards.length > INITIAL_SHOW;
+    showMoreBtn.style.display = hasMore ? 'inline-flex' : 'none';
+    if (hasMore) {
+      var remaining = visibleCards.length - INITIAL_SHOW;
+      showMoreBtn.innerHTML = isExpanded
+        ? 'Show Less <i class="fa-solid fa-chevron-up"></i>'
+        : 'Show More (' + remaining + ') <i class="fa-solid fa-chevron-down"></i>';
+    }
+  }
 
   // ── Category filtering ──────────────────────────────────────────────────────
   filterBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var filter = this.getAttribute('data-filter');
+      currentFilter = this.getAttribute('data-filter');
+      isExpanded = false;
       filterBtns.forEach(function (b) { b.classList.remove('active'); });
       this.classList.add('active');
-      cards.forEach(function (card) {
-        var cls = (card.getAttribute('data-filter-class') || '').split(' ');
-        var visible = filter === '*' || cls.indexOf(filter) !== -1;
-        card.classList.toggle('proj-hidden', !visible);
-      });
+      updateVisibility();
     });
   });
+
+  // ── Show More / Less ────────────────────────────────────────────────────────
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener('click', function () {
+      isExpanded = !isExpanded;
+      updateVisibility();
+    });
+  }
 
   // ── Modal helpers ───────────────────────────────────────────────────────────
   function openModal(card) {
@@ -101,4 +144,7 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && backdrop.classList.contains('is-open')) closeModal();
   });
+
+  // ── Init ─────────────────────────────────────────────────────────────────────
+  updateVisibility();
 })();
