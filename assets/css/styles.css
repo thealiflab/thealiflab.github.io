@@ -3506,6 +3506,66 @@ BLOG Single Post Pagination
   }
 }
 
+/* Achievement timeline entries */
+.achievement-dot {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(245,158,11,0.18);
+}
+
+.tl-card.tl-card-achievement {
+  border-left-color: #f59e0b;
+}
+
+.tl-card.tl-card-achievement:hover {
+  box-shadow: 0 8px 28px rgba(245,158,11,0.18);
+}
+
+.tl-card-img-wrap {
+  margin: 0 -26px 18px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.tl-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.32s ease;
+}
+
+.tl-card.tl-card-achievement:hover .tl-card-img {
+  transform: scale(1.04);
+}
+
+.tl-card.tl-card-achievement .mh-eduyear {
+  background: rgba(245,158,11,0.1);
+  color: #d97706;
+}
+
+.tl-view-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1089ff;
+  text-decoration: none;
+  border: 1.5px solid rgba(16,137,255,0.3);
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: background 0.22s, color 0.22s, border-color 0.22s;
+}
+
+.tl-view-more:hover {
+  background: #1089ff;
+  color: #fff;
+  border-color: #1089ff;
+  text-decoration: none;
+}
+
 /* =============================================
    Projects — card grid redesign
    ============================================= */
