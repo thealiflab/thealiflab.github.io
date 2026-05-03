@@ -3887,4 +3887,322 @@ BLOG Single Post Pagination
   }
 }
 
+/* =============================================
+   Contact Section — Side accent layout
+   ============================================= */
+
+/* Transparent section — lets page background show through */
+.ct-section-bg {
+  background: transparent;
+  padding: 0;
+}
+
+.mh-footer .ct-section-bg {
+  background: transparent;
+}
+
+/* Two-column open grid — no card, no shadow */
+.ct-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  min-height: 0;
+}
+
+/* ── Left info column ─────────────────────────────── */
+
+.ct-info-panel {
+  background: transparent;
+  padding: 4px 0 4px 28px;
+  border-left: 3px solid #1089ff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: visible;
+}
+
+/* remove decorative circles */
+.ct-info-panel::before,
+.ct-info-panel::after {
+  content: none;
+}
+
+.ct-panel-heading {
+  font-size: 30px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 14px;
+}
+
+.ct-tagline {
+  font-size: 14.5px;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.72;
+  margin: 0 0 38px;
+}
+
+/* Contact detail rows */
+.ct-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ct-detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.ct-detail-row:first-child {
+  border-top: 1px solid rgba(0,0,0,0.07);
+}
+
+/* Light blue tint badge — airy, not filled */
+.ct-detail-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(16,137,255,0.09);
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  color: #1089ff;
+  flex-shrink: 0;
+}
+
+.ct-detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 2px;
+}
+
+.ct-detail-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: rgba(0,0,0,0.38);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ct-detail-text a,
+.ct-detail-text span:not(.ct-detail-label) {
+  font-size: 14px;
+  color: rgba(0,0,0,0.72);
+  text-decoration: none;
+  transition: color 0.18s;
+  word-break: break-word;
+}
+
+.ct-detail-text a:hover {
+  color: #1089ff;
+  text-decoration: underline;
+}
+
+/* Bottom social buttons — light blue tint */
+.ct-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.ct-social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: rgba(16,137,255,0.09);
+  color: #1089ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.ct-social-btn:hover {
+  background: #1089ff;
+  color: #fff;
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+/* ── Right form column ────────────────────────────── */
+
+.ct-form-panel {
+  background: transparent;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ct-form-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 36px;
+}
+
+/* Floating label field wrapper */
+.ct-field {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+/* Override legacy mh-footer styles for inputs/textarea */
+.ct-form-panel .contact-name,
+.ct-form-panel .contact-subject,
+.ct-form-panel .contact-message {
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(0,0,0,0.13) !important;
+  border-radius: 0 !important;
+  padding: 22px 0 8px !important;
+  font-size: 15px !important;
+  color: #333 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  resize: none;
+  display: block;
+  transition: border-color 0.22s ease !important;
+  line-height: 1.5;
+}
+
+.ct-form-panel .contact-name:focus,
+.ct-form-panel .contact-subject:focus,
+.ct-form-panel .contact-message:focus {
+  border-bottom-color: #1089ff !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  background: transparent !important;
+}
+
+.white-vertion .ct-form-panel .contact-name,
+.white-vertion .ct-form-panel .contact-subject,
+.white-vertion .ct-form-panel .contact-message,
+.white-vertion .ct-form-panel .contact-name:focus,
+.white-vertion .ct-form-panel .contact-subject:focus,
+.white-vertion .ct-form-panel .contact-message:focus {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Floating label */
+.ct-field label {
+  position: absolute;
+  left: 0;
+  top: 22px;
+  font-size: 15px;
+  color: rgba(0,0,0,0.38);
+  pointer-events: none;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+.ct-field input:focus ~ label,
+.ct-field input:not(:placeholder-shown) ~ label,
+.ct-field textarea:focus ~ label,
+.ct-field textarea:not(:placeholder-shown) ~ label {
+  top: 1px;
+  font-size: 11px;
+  color: #1089ff;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+/* Submit button — intentionally solid, retains weight */
+.ct-submit-btn {
+  width: 100%;
+  background: #1089ff;
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.18s ease;
+  box-shadow: 0 6px 20px rgba(16,137,255,0.32);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+
+.ct-submit-btn:hover {
+  background: #0070e0;
+  box-shadow: 0 10px 28px rgba(16,137,255,0.42);
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.ct-submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(16,137,255,0.28);
+}
+
+/* Success message */
+#resultMessage {
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: rgba(16,137,255,0.07);
+  border-left: 4px solid #1089ff;
+  border-radius: 6px;
+  color: #1089ff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Copyright bar */
+.ct-copyright {
+  text-align: center;
+  padding-top: 28px;
+  margin-top: 0 !important;
+}
+
+.ct-copyright p {
+  color: rgba(0,0,0,0.38);
+  font-size: 13px;
+  margin: 0;
+}
+
+.ct-copyright p a {
+  color: rgba(0,0,0,0.38);
+  text-decoration: none;
+}
+
+.ct-copyright p a:hover {
+  color: #1089ff;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .ct-wrapper {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 40px;
+  }
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 767px) {
+  .ct-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .ct-panel-heading {
+    font-size: 24px;
+  }
+  .ct-tagline {
+    margin-bottom: 28px;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */
