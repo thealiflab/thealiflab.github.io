@@ -3135,87 +3135,108 @@ BLOG Single Post Pagination
 .stack-section-title {
   font-weight: 600;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
+/* Tab bar */
 .stack-tabs {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .stack-tab {
   flex-shrink: 0;
   background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.22);
-  color: rgba(0, 0, 0, 0.72);
-  border-radius: 20px;
-  padding: 7px 16px;
+  border: 2px solid rgba(0, 0, 0, 0.18);
+  color: rgba(0, 0, 0, 0.62);
+  border-radius: 24px;
+  padding: 7px 18px;
   font-size: 13px;
+  font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
   white-space: nowrap;
   outline: none;
 }
 .stack-tab:hover {
   border-color: #1089ff;
   color: #1089ff;
+  background: rgba(16, 137, 255, 0.06);
 }
 .stack-tab.active {
   background: #1089ff;
   border-color: #1089ff;
   color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(16, 137, 255, 0.28);
 }
 
+/* Panels */
 .stack-panels {
-  min-height: 260px;
+  min-height: 340px;
 }
 .stack-panel {
   display: none;
 }
 .stack-panel.active {
   display: block;
+  animation: panelFadeIn 0.28s ease both;
 }
 
+@keyframes panelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skill grid — 4 columns on large screens */
 .stack-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
+/* Skill card */
 .skill-chip {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  background: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 20px 10px;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.025);
+  border: 1.5px solid rgba(0, 0, 0, 0.09);
+  border-radius: 14px;
+  padding: 22px 10px 18px;
   text-align: center;
-  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
   cursor: default;
 }
 .skill-chip:hover {
-  background: rgba(16, 137, 255, 0.1);
-  border-color: rgba(16, 137, 255, 0.35);
-  transform: translateY(-2px);
+  background: rgba(16, 137, 255, 0.06);
+  border-color: #1089ff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(16, 137, 255, 0.16);
 }
 .skill-chip i {
-  font-size: 32px;
+  font-size: 38px;
   line-height: 1;
 }
 .skill-img {
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   object-fit: contain;
 }
 .skill-chip > span:not(.skill-badge) {
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.65);
+  font-size: 11.5px;
+  color: rgba(0, 0, 0, 0.6);
   font-weight: 500;
   line-height: 1.3;
 }
@@ -3224,35 +3245,61 @@ BLOG Single Post Pagination
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 28px;
-  border-radius: 5px;
-  font-size: 10px;
+  width: 40px;
+  height: 30px;
+  border-radius: 6px;
+  font-size: 11px;
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.5px;
   line-height: 1;
 }
 
+/* Tablet — 2 columns */
+@media (max-width: 991px) {
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .stack-panels {
+    min-height: 280px;
+  }
+}
+
+/* Mobile — 1 column, horizontal card layout */
 @media (max-width: 767px) {
   .mh-skills-stack {
     margin-bottom: 40px;
   }
+  .stack-panels {
+    min-height: auto;
+  }
   .stack-grid {
-    gap: 9px;
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
   .skill-chip {
-    padding: 14px 6px;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 14px 18px;
+    gap: 16px;
+    border-radius: 12px;
+    text-align: left;
   }
   .skill-chip i {
-    font-size: 26px;
+    font-size: 28px;
+    flex-shrink: 0;
   }
   .skill-img {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
   }
   .skill-chip > span:not(.skill-badge) {
-    font-size: 11px;
+    font-size: 13px;
+  }
+  .skill-badge {
+    flex-shrink: 0;
   }
 }
 
