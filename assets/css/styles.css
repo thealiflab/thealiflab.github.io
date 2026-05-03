@@ -3930,13 +3930,13 @@ BLOG Single Post Pagination
 .ct-panel-heading {
   font-size: 30px;
   font-weight: 700;
-  color: #2c3e50;
+  color: #1089ff;
   margin: 0 0 14px;
 }
 
 .ct-tagline {
   font-size: 14.5px;
-  color: rgba(0,0,0,0.55);
+  color: rgba(44,62,80,0.68);
   line-height: 1.72;
   margin: 0 0 38px;
 }
@@ -3953,11 +3953,11 @@ BLOG Single Post Pagination
   align-items: flex-start;
   gap: 16px;
   padding: 18px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.07);
+  border-bottom: 1px solid rgba(16,137,255,0.14);
 }
 
 .ct-detail-row:first-child {
-  border-top: 1px solid rgba(0,0,0,0.07);
+  border-top: 1px solid rgba(16,137,255,0.14);
 }
 
 /* Light blue tint badge — airy, not filled */
@@ -3984,7 +3984,7 @@ BLOG Single Post Pagination
 .ct-detail-label {
   font-size: 10.5px;
   font-weight: 700;
-  color: rgba(0,0,0,0.38);
+  color: rgba(16,137,255,0.7);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -3992,7 +3992,7 @@ BLOG Single Post Pagination
 .ct-detail-text a,
 .ct-detail-text span:not(.ct-detail-label) {
   font-size: 14px;
-  color: rgba(0,0,0,0.72);
+  color: #2c3e50;
   text-decoration: none;
   transition: color 0.18s;
   word-break: break-word;
