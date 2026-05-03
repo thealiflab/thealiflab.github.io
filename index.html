@@ -188,9 +188,165 @@
   <section class="mh-about" id="mh-about">
     <div class="container">
       <div class="row section-separator">
-        <div class="col-sm-12 col-md-6">
-          <div class="mh-about-img shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-            <img src="assets/images/aliflablogo.png" alt="" class="img-fluid">
+        <div class="col-sm-12 col-md-6" id="mh-skills">
+          <div class="mh-skills-stack wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+            <h2 class="stack-section-title">Skills &amp; Tech Stack</h2>
+
+            <div class="stack-tabs" role="tablist" aria-label="Skill categories">
+              <button class="stack-tab active" data-tab="lang" role="tab" aria-selected="true">Languages</button>
+              <button class="stack-tab" data-tab="ml" role="tab" aria-selected="false">ML &amp; Data</button>
+              <button class="stack-tab" data-tab="fw" role="tab" aria-selected="false">Frameworks</button>
+              <button class="stack-tab" data-tab="cloud" role="tab" aria-selected="false">Cloud</button>
+              <button class="stack-tab" data-tab="db" role="tab" aria-selected="false">Databases</button>
+              <button class="stack-tab" data-tab="tools" role="tab" aria-selected="false">Tools</button>
+            </div>
+
+            <div class="stack-panels">
+
+              <div class="stack-panel active" id="stack-lang" role="tabpanel">
+                <div class="stack-grid">
+                  <div class="skill-chip">
+                    <i class="fa-brands fa-python" style="color:#3776ab"></i>
+                    <span>Python</span>
+                  </div>
+                  <div class="skill-chip">
+                    <i class="fa-brands fa-php" style="color:#8892be"></i>
+                    <span>PHP</span>
+                  </div>
+                  <div class="skill-chip">
+                    <span class="skill-badge" style="background:#3178c6">TS</span>
+                    <span>TypeScript</span>
+                  </div>
+                  <div class="skill-chip">
+                    <i class="fa-brands fa-js" style="color:#f7df1e"></i>
+                    <span>JavaScript</span>
+                  </div>
+                  <div class="skill-chip">
+                    <span class="skill-badge" style="background:#54c5f8;color:#202026">FL</span>
+                    <span>Flutter/Dart</span>
+                  </div>
+                  <div class="skill-chip">
+                    <i class="fa-solid fa-database" style="color:#f29111"></i>
+                    <span>SQL</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stack-panel" id="stack-ml" role="tabpanel">
+                <div class="stack-grid">
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/master/topics/tensorflow/tensorflow.png" alt="TensorFlow" class="skill-img">
+                    <span>TensorFlow</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/master/topics/scikit-learn/scikit-learn.png" alt="Scikit-learn" class="skill-img">
+                    <span>Scikit-learn</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/master/topics/jupyter-notebook/jupyter-notebook.png" alt="Jupyter" class="skill-img">
+                    <span>Jupyter</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://img.icons8.com/?size=100&id=xSkewUSqtErH&format=png&color=000000" alt="Pandas" class="skill-img">
+                    <span>Pandas</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/master/topics/numpy/numpy.png" alt="NumPy" class="skill-img">
+                    <span>NumPy</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stack-panel" id="stack-fw" role="tabpanel">
+                <div class="stack-grid">
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/master/topics/flutter/flutter.png" alt="Flutter" class="skill-img">
+                    <span>Flutter</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://img.icons8.com/?size=100&id=aMLZmDlq6SvC&format=png&color=000000" alt="WordPress" class="skill-img">
+                    <span>WordPress</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://img.icons8.com/color/48/microsoft-office-2019.png" alt="Microsoft 365" class="skill-img">
+                    <span>MS 365</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://img.icons8.com/color/48/microsoft-sharepoint-2019.png" alt="SharePoint" class="skill-img">
+                    <span>SharePoint</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://img.icons8.com/?size=100&id=D5nuxA0qwo6w&format=png&color=000000" alt="Intune" class="skill-img">
+                    <span>Intune</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stack-panel" id="stack-cloud" role="tabpanel">
+                <div class="stack-grid">
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/main/topics/aws/aws.png" alt="AWS" class="skill-img">
+                    <span>AWS</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/main/topics/heroku/heroku.png" alt="Heroku" class="skill-img">
+                    <span>Heroku</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/master/topics/linux/linux.png" alt="Linux" class="skill-img">
+                    <span>Linux</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/master/topics/nginx/nginx.png" alt="Nginx" class="skill-img">
+                    <span>Nginx</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/master/topics/docker/docker.png" alt="Docker" class="skill-img">
+                    <span>Docker</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://www.3cx.com/wp-content/uploads/2018/08/logo-3.png" alt="3CX" class="skill-img">
+                    <span>3CX</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stack-panel" id="stack-db" role="tabpanel">
+                <div class="stack-grid">
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/master/topics/mysql/mysql.png" alt="MySQL" class="skill-img">
+                    <span>MySQL</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/master/topics/firebase/firebase.png" alt="Firebase" class="skill-img">
+                    <span>Firebase</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/master/topics/mongodb/mongodb.png" alt="MongoDB" class="skill-img">
+                    <span>MongoDB</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stack-panel" id="stack-tools" role="tabpanel">
+                <div class="stack-grid">
+                  <div class="skill-chip">
+                    <img src="https://raw.githubusercontent.com/github/explore/master/topics/git/git.png" alt="Git" class="skill-img">
+                    <span>Git</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://img.icons8.com/fluent/48/000000/visual-studio-code-2019.png" alt="VS Code" class="skill-img">
+                    <span>VS Code</span>
+                  </div>
+                  <div class="skill-chip">
+                    <img src="https://img.icons8.com/color/48/jira.png" alt="Jira" class="skill-img">
+                    <span>Jira</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
           </div>
         </div>
         <div class="col-sm-12 col-md-6">
@@ -270,235 +426,6 @@ I manage enterprise IT infrastructure across multiple brand entities, overseeing
     </div>
   </section> -->
 
-  <!--
-        ===================
-           SKILLS
-        ===================
-        -->
-  <section class="mh-skills" id="mh-skills">
-    <div class="container">
-      <div class="row section-separator">
-        <div class="section-title text-center col-sm-12">
-          <!--<h2>Skills</h2>-->
-        </div>
-
-        <div class="col-sm-12 col-md-6">
-          <div class="mh-skills-inner">
-            <div class="mh-professional-skill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-              <h3>Technical Skills</h3>
-              <div class="each-skills">
-
-                <!-- Skill 1 -->
-                <div class="candidatos">
-                  <div class="parcial">
-                    <div class="info">
-                      <div class="nome">Python</div>
-                      <div class="percentagem-num">75%</div>
-                    </div>
-                    <div class="progressBar">
-                      <div class="percentagem" style="width: 75%;"></div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Skill 2 -->
-                <div class="candidatos">
-                  <div class="parcial">
-                    <div class="info">
-                      <div class="nome">Dart</div>
-                      <div class="percentagem-num">70%</div>
-                    </div>
-                    <div class="progressBar">
-                      <div class="percentagem" style="width: 70%;"></div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Skill 3 -->
-                <div class="candidatos">
-                  <div class="parcial">
-                    <div class="info">
-                      <div class="nome">C#</div>
-                      <div class="percentagem-num">40%</div>
-                    </div>
-                    <div class="progressBar">
-                      <div class="percentagem" style="width: 40%;"></div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Skill 4 -->
-                <div class="candidatos">
-                  <div class="parcial">
-                    <div class="info">
-                      <div class="nome">PHP <span style="color: green; font-size: 10px;padding-left: 5px;">[Updated +35]</span></div>
-                      <div class="percentagem-num">70%</div>
-                    </div>
-                    <div class="progressBar">
-                      <div class="percentagem" style="width: 70%;"></div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Skill 5 -->
-                <div class="candidatos">
-                  <div class="parcial">
-                    <div class="info">
-                      <div class="nome">C/C++</div>
-                      <div class="percentagem-num">80%</div>
-                    </div>
-                    <div class="progressBar">
-                      <div class="percentagem" style="width: 80%;"></div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Skill 6 -->
-                <div class="candidatos">
-                  <div class="parcial">
-                    <div class="info">
-                      <div class="nome">Java</div>
-                      <div class="percentagem-num">60%</div>
-                    </div>
-                    <div class="progressBar">
-                      <div class="percentagem" style="width: 60%;"></div>
-                    </div>
-                  </div>
-                </div>
-
-                <br>
-                <br>
-
-                <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                  <ul>
-                    <li><span>Flutter</span></li>
-                    <li><span>Wordpress</span></li>
-                    <li><span>NodeJS</span></li>
-                    <li><span>PHP</span></li>
-                    <li><span>HTML5</span></li>
-                    <li><span>CSS3</span></li>
-                    <li><span>Bootstrap</span></li>
-                    <li><span>MySQL</span></li>
-                    <li><span>Postgres</span></li>
-                  </ul>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        
-        <div class="col-sm-12 col-md-6">
-          <div class="mh-skills-inner">
-            <div class="mh-professional-skill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-              <h3>Academic Skills</h3>
-              <div class="each-skills">
-
-                  <!-- Academic Skills 1 -->
-                  <div class="candidatos">
-                    <div class="parcial">
-                      <div class="info">
-                        <div class="nome">Data Analysis</div>
-                        <div class="percentagem-num">75%</div>
-                      </div>
-                      <div class="progressBar">
-                        <div class="percentagem" style="width: 75%;"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Skill 2 -->
-                  <div class="candidatos">
-                    <div class="parcial">
-                      <div class="info">
-                        <div class="nome">Research</div>
-                        <div class="percentagem-num">85%</div>
-                      </div>
-                      <div class="progressBar">
-                        <div class="percentagem" style="width: 85%;"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Skill 3 -->
-                  <div class="candidatos">
-                    <div class="parcial">
-                      <div class="info">
-                        <div class="nome">Leadership</div>
-                        <div class="percentagem-num">80%</div>
-                      </div>
-                      <div class="progressBar">
-                        <div class="percentagem" style="width: 80%;"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Skill 4 -->
-                  <div class="candidatos">
-                    <div class="parcial">
-                      <div class="info">
-                        <div class="nome">Communication</div>
-                        <div class="percentagem-num">70%</div>
-                      </div>
-                      <div class="progressBar">
-                        <div class="percentagem" style="width: 70%;"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- TODO: add academic hashtag/keywords here:
-                  <br>
-                  <br>
-
-                  <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                    <ul>
-                      <li><span>Flutter</span></li>
-                      <li><span>Wordpress</span></li>
-                      <li><span>NodeJS</span></li>
-                      <li><span>HTML5</span></li>
-                      <li><span>CSS3</span></li>
-                      <li><span>Bootstrap</span></li>
-                      <li><span>MySQL</span></li>
-                      <li><span>Postgres</span></li>
-                    </ul>
-                  </div> -->
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        
-        
-        <!-- Comment: Warning! Below code is not working for some reasons -->
-        <!-- <div class="col-sm-12 col-md-6">
-          <div class="mh-professional-skills wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-            <h3>Academic Skills</h3>
-            <ul class="mh-professional-progress">
-
-              <li>
-                <div class="mh-progress mh-progress-circle" data-progress="80"></div>
-                <div class="pr-skill-name">Data Analysis</div>
-              </li>
-
-              <li>
-                <div class="mh-progress mh-progress-circle" data-progress="90"></div>
-                <div class="pr-skill-name">Diligence</div>
-              </li>
-
-              <li>
-                <div class="mh-progress mh-progress-circle" data-progress="78"></div>
-                <div class="pr-skill-name">Teamwork</div>
-              </li>
-
-              <li>
-                <div class="mh-progress mh-progress-circle" data-progress="80"></div>
-                <div class="pr-skill-name">English Language</div>
-              </li>
-              
-            </ul>
-          </div>
-        </div> -->
-
-
-      </div>
-    </div>
-  </section>
 
   <!--
         ===================

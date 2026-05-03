@@ -3127,6 +3127,135 @@ BLOG Single Post Pagination
   }
 
 
+/* ---- Skills & Tech Stack ---- */
+.mh-skills-stack {
+  padding: 0;
+}
+
+.stack-section-title {
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.stack-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.stack-tab {
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  color: rgba(0, 0, 0, 0.72);
+  border-radius: 20px;
+  padding: 7px 16px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  outline: none;
+}
+.stack-tab:hover {
+  border-color: #1089ff;
+  color: #1089ff;
+}
+.stack-tab.active {
+  background: #1089ff;
+  border-color: #1089ff;
+  color: #fff;
+}
+
+.stack-panels {
+  min-height: 260px;
+}
+.stack-panel {
+  display: none;
+}
+.stack-panel.active {
+  display: block;
+}
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.skill-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px 10px;
+  text-align: center;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  cursor: default;
+}
+.skill-chip:hover {
+  background: rgba(16, 137, 255, 0.1);
+  border-color: rgba(16, 137, 255, 0.35);
+  transform: translateY(-2px);
+}
+.skill-chip i {
+  font-size: 32px;
+  line-height: 1;
+}
+.skill-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.skill-chip > span:not(.skill-badge) {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 28px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+@media (max-width: 767px) {
+  .mh-skills-stack {
+    margin-bottom: 40px;
+  }
+  .stack-grid {
+    gap: 9px;
+  }
+  .skill-chip {
+    padding: 14px 6px;
+  }
+  .skill-chip i {
+    font-size: 26px;
+  }
+  .skill-img {
+    width: 26px;
+    height: 26px;
+  }
+  .skill-chip > span:not(.skill-badge) {
+    font-size: 11px;
+  }
+}
+
 /* ---- Role typing animation ---- */
 #role-typing {
   background: linear-gradient(90deg, #1089ff 0%, #a855f7 50%, #06b6d4 100%);

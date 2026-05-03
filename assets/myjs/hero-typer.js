@@ -38,4 +38,21 @@
   }
 
   typeRole();
+
+  // Skills tab switching
+  document.querySelectorAll('.stack-tab').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var tab = this.getAttribute('data-tab');
+      document.querySelectorAll('.stack-tab').forEach(function (t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.stack-panel').forEach(function (p) {
+        p.classList.remove('active');
+      });
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+      document.getElementById('stack-' + tab).classList.add('active');
+    });
+  });
 })();
