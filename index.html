@@ -150,12 +150,12 @@
             <div class="mh-header-info">
 
               <div class="mh-promo wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
-                <span id="typing-text"></span>
+                <span>Hello World! I'm</span>
               </div>
 
               <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Ahmed Alif Swopno</h2>
               <br>
-              <h5 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">MCompSc | ML & Big Data | App Developer</h5>
+              <h5 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s"><span id="role-typing"></span><span class="role-cursor" aria-hidden="true">|</span></h5>
 
               <ul>
                 <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fa-solid fa-envelope f-top"></i><a href="mailto:ahmedalif1010@gmail.com">alif09.au@gmail.com</a></li>
@@ -168,7 +168,6 @@
                 <li><a href="https://twitter.com/alif0920" target="_blank"><i class="fa-brands fa-square-x-twitter f-top"></i></a></li>
                 <li><a href="https://github.com/thealiflab" target="_blank"><i class="fa-brands fa-github f-top"></i></a></li>
                 <li><a href="https://stackoverflow.com/users/11681472/alif" target="_blank"><i class="fa-brands fa-stack-overflow f-top"></i></a></li>
-                <li><a href="https://www.behance.net/alif09" target="_blank"><i class="fa-brands fa-behance f-top"></i></a></li>
               </ul>
             </div>
           </div>
@@ -198,8 +197,14 @@
           <div class="mh-about-inner">
             <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">About Me</h2>
             <p class="wow fadeInUp myintrotext" data-wow-duration="0.8s" data-wow-delay="0.2s">
-              Alif is a highly motivated and ambitious Computer Science professional, currently completing a Master’s degree in Computer Science with a specialization in Machine Learning and Big Data Analytics at the University of Wollongong, Australia. With a strong academic foundation from his Bachelor’s in Computer Science and Engineering from the American International University-Bangladesh, he possesses a robust technical skill set and a passion for practical innovation.
-              </br></br>Alif has hands-on experience in software development, mobile and web application engineering, and AI-driven projects, including initiatives focused on public health and deepfake audio detection. He is constantly expanding his knowledge to stay ahead in the evolving tech landscape and aims to build a career as an expert in the IT and AI sectors, offering creative and ethical solutions to real-world challenges.
+              I am Alif, an IT Systems Professional and AI enthusiast based in Wollongong, NSW, Australia, holding a Master of Computer Science (Machine Learning & Big Data Analytics) from the University of Wollongong.
+I manage enterprise IT infrastructure across multiple brand entities, overseeing Microsoft 365, SharePoint, Intune, Entra ID, Exchange Online, AWS, Route 53, and 3CX Phone System. My work spans device compliance, identity governance, DNS migrations, SSL provisioning, and branch-level support, backed by a strong discipline around documentation, SOPs, and knowledge management.
+<br><br>Beyond infrastructure, I design and build AI-powered applications and agentic workflows using the Claude API, Model Context Protocol (MCP), and Microsoft Copilot. I have shipped Flutter mobile apps, deployed ML models, built WordPress plugins from scratch, and architected SharePoint environments for Copilot readiness.
+<br><br>My skill set sits across infrastructure (cloud, endpoint management, identity, telephony), development (Python, Django, Flutter, REST APIs), and AI (LLMs, prompt engineering, agentic systems, Copilot integrations), and all delivered with a structured project coordination mindset through Jira-based service management.
+<br><br>I am particularly focused on enterprise AI adoption, helping organisations integrate Copilot, automation, and agentic AI meaningfully; cloud and identity infrastructure built around security and scalability.
+<br><br>If you are looking to collaborate, consult, or simply connect, I am always open to interesting conversations.
+
+
             </p>
 
             <a href="JavaScript:void(0);" onclick="alert('If you are interested, leave a message at the bottom form 😀')" download class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">Download CV <i
@@ -1071,23 +1076,7 @@
   <!-- Custom Scripts-->
   <script src="assets/js/map-init.js"></script>
   <script src="assets/js/custom-scripts.js"></script>
-  <script>
-    (function () {
-      var text = "Hello World! I'm";
-      var el = document.getElementById('typing-text');
-      var i = 0;
-
-      function type() {
-        if (i <= text.length) {
-          el.textContent = text.slice(0, i);
-          i++;
-          setTimeout(type, 80);
-        }
-      }
-
-      type();
-    })();
-  </script>
+  <script src="assets/myjs/hero-typer.js"></script>
 
 
 

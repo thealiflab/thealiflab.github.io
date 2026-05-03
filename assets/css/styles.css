@@ -1165,6 +1165,7 @@ body {
     border-radius: 50%; } */
 
 .myintrotext{
+  font-size: 13px;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -3125,5 +3126,35 @@ BLOG Single Post Pagination
     margin-top:15px;
   }
 
+
+/* ---- Role typing animation ---- */
+#role-typing {
+  background: linear-gradient(90deg, #1089ff 0%, #a855f7 50%, #06b6d4 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: role-gradient-shift 4s linear infinite;
+  font-weight: 600;
+}
+
+@keyframes role-gradient-shift {
+  0%   { background-position: 0%   center; }
+  100% { background-position: 200% center; }
+}
+
+.role-cursor {
+  display: inline-block;
+  color: #1089ff;
+  -webkit-text-fill-color: #1089ff;
+  font-weight: 300;
+  animation: role-cursor-blink 0.7s step-end infinite;
+  margin-left: 1px;
+}
+
+@keyframes role-cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
 
 /*# sourceMappingURL=styles.css.map */
