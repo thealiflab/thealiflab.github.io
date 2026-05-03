@@ -4298,4 +4298,382 @@ BLOG Single Post Pagination
   }
 }
 
+/* =============================================
+   GenAI Stack — Visual Pyramid
+   ============================================= */
+
+.genai-subheading {
+  font-size: 15px;
+  color: rgba(44,62,80,0.58);
+  margin: -6px 0 0;
+}
+
+/* Pyramid wrapper */
+.genai-pyramid-wrap {
+  width: 100%;
+  overflow: visible;
+  margin: 28px 0 0;
+}
+
+/* Each tier row */
+.genai-pyr-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--row-bg, transparent);
+  overflow: visible;
+}
+
+.genai-pyr-row:first-child { border-radius: 14px 14px 0 0; }
+.genai-pyr-row:last-child  { border-radius: 0 0 14px 14px; }
+
+/* Individual tool block */
+.genai-pyr-block {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  z-index: 1;
+}
+
+.genai-pyr-block:hover,
+.genai-pyr-block:focus {
+  transform: translateY(-5px) scale(1.14);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.16);
+  z-index: 20;
+}
+
+/* Logo image */
+.genai-pyr-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+/* Fallback letter */
+.genai-pyr-logo-fb {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #1089ff;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Tooltip — appears above block on hover */
+.genai-pyr-block::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: rgba(20,20,30,0.84);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 4px 9px;
+  border-radius: 5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s, transform 0.15s;
+  z-index: 50;
+  letter-spacing: 0.2px;
+}
+
+.genai-pyr-block::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  border: 4px solid transparent;
+  border-top-color: rgba(20,20,30,0.84);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s, transform 0.15s;
+  z-index: 50;
+}
+
+.genai-pyr-block:hover::after,
+.genai-pyr-block:hover::before,
+.genai-pyr-block:focus::after,
+.genai-pyr-block:focus::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Tier legend below pyramid */
+.genai-pyr-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.genai-legend-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: rgba(44,62,80,0.7);
+  line-height: 1.4;
+}
+
+.genai-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.genai-legend-text strong {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* Modal */
+.genai-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9600;
+  background: rgba(0,0,0,0.58);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.26s;
+}
+
+.genai-modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.genai-modal {
+  background: #fff;
+  border-radius: 20px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 88vh;
+  overflow: hidden;
+  position: relative;
+  transform: translateY(22px) scale(0.97);
+  transition: transform 0.28s;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.22);
+}
+
+.genai-modal-backdrop.is-open .genai-modal {
+  transform: translateY(0) scale(1);
+}
+
+.genai-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.07);
+  color: #555;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: background 0.2s;
+}
+
+.genai-modal-close:hover {
+  background: rgba(0,0,0,0.14);
+}
+
+.genai-modal-scroll {
+  overflow-y: auto;
+  max-height: 88vh;
+}
+
+.genai-modal-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 28px 28px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.genai-modal-logo-wrap {
+  width: 68px;
+  height: 68px;
+  background: #f8fafc;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.genai-modal-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.genai-modal-logo-fb {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #1089ff;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+}
+
+.genai-modal-head-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.genai-modal-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 8px;
+  padding-right: 44px;
+  line-height: 1.3;
+}
+
+.genai-modal-tier-pill {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 14px;
+  display: inline-block;
+}
+
+.genai-modal-body {
+  padding: 22px 28px 32px;
+}
+
+.genai-modal-section {
+  margin-bottom: 22px;
+}
+
+.genai-modal-section:last-child {
+  margin-bottom: 0;
+}
+
+.genai-modal-sec-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #1089ff;
+  margin-bottom: 10px;
+}
+
+.genai-modal-section p {
+  font-size: 14px;
+  color: rgba(44,62,80,0.78);
+  line-height: 1.72;
+  margin: 0;
+}
+
+.genai-modal-cases {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.genai-modal-cases li {
+  font-size: 14px;
+  color: rgba(44,62,80,0.78);
+  line-height: 1.72;
+  margin-bottom: 5px;
+}
+
+.genai-modal-cases li:last-child {
+  margin-bottom: 0;
+}
+
+/* Pyramid responsive */
+
+/* lg (992–1199px) — slightly smaller blocks */
+@media (max-width: 1199px) {
+  .genai-pyr-block { width: 48px; height: 48px; border-radius: 10px; }
+  .genai-pyr-logo { width: 32px; height: 32px; }
+  .genai-pyr-logo-fb { width: 32px; height: 32px; font-size: 15px; }
+  .genai-pyr-row { gap: 6px; padding: 10px 16px; }
+}
+
+/* md (768–991px) — compact blocks that still fit 17 in a row */
+@media (max-width: 991px) {
+  .genai-pyr-block { width: 40px; height: 40px; border-radius: 9px; }
+  .genai-pyr-logo { width: 26px; height: 26px; }
+  .genai-pyr-logo-fb { width: 26px; height: 26px; font-size: 12px; }
+  .genai-pyr-row { gap: 4px; padding: 9px 10px; }
+}
+
+/* sm — mobile: wrap rows, show tier label above each row */
+@media (max-width: 767px) {
+  .genai-pyr-row {
+    flex-wrap: wrap;
+    gap: 7px;
+    padding: 10px 14px;
+    border-radius: 0;
+  }
+
+  .genai-pyr-row:first-child { border-radius: 12px 12px 0 0; }
+  .genai-pyr-row:last-child  { border-radius: 0 0 12px 12px; }
+
+  /* Tier label injected via CSS above each mobile row */
+  .genai-pyr-row::before {
+    content: attr(data-tier-label);
+    display: block;
+    width: 100%;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(44,62,80,0.48);
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    margin-bottom: 4px;
+  }
+
+  .genai-pyr-block { width: 44px; height: 44px; border-radius: 10px; }
+  .genai-pyr-logo { width: 30px; height: 30px; }
+  .genai-pyr-logo-fb { width: 30px; height: 30px; font-size: 13px; }
+
+  .genai-pyr-legend { gap: 10px; }
+  .genai-legend-pill { font-size: 11px; }
+
+  .genai-modal-head { padding: 22px 20px 16px; }
+  .genai-modal-body { padding: 18px 20px 24px; }
+}
+
 /*# sourceMappingURL=styles.css.map */

@@ -107,6 +107,10 @@
               </li>
 
               <li class="nav-item">
+                <a class="nav-link" href="#mh-genai">GenAI</a>
+              </li>
+
+              <li class="nav-item">
                 <a class="nav-link" href="#mh-certificate">Certificates</a>
               </li>
 
@@ -897,6 +901,59 @@
 
   <!--
   ===================
+     GenAI Stack
+  ===================
+  -->
+  <section class="mh-genai" id="mh-genai" aria-label="My AI Stack">
+    <div class="container">
+      <div class="row section-separator">
+        <div class="section-title col-sm-12 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
+          <h3>My AI Stack</h3>
+          <p class="genai-subheading">AI tools I use, build with, and experiment on &mdash; ranked by depth of usage.</p>
+        </div>
+        <div class="col-sm-12 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+          <div class="genai-pyramid-wrap" id="genaiPyramidWrap" aria-label="AI stack pyramid by tier"></div>
+          <div class="genai-pyr-legend" id="genaiPyrLegend" aria-label="Tier legend"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GenAI Tool Modal -->
+  <div class="genai-modal-backdrop" id="genaiModalBackdrop" aria-hidden="true">
+    <div class="genai-modal" role="dialog" aria-modal="true" aria-labelledby="genaiModalName">
+      <button class="genai-modal-close" id="genaiModalClose" aria-label="Close">&times;</button>
+      <div class="genai-modal-scroll">
+        <div class="genai-modal-head">
+          <div class="genai-modal-logo-wrap">
+            <img src="" alt="" class="genai-modal-logo" id="genaiModalLogo">
+            <div class="genai-modal-logo-fb" id="genaiModalLogoFb" aria-hidden="true"></div>
+          </div>
+          <div class="genai-modal-head-info">
+            <h3 class="genai-modal-name" id="genaiModalName"></h3>
+            <span class="genai-modal-tier-pill" id="genaiModalTierPill"></span>
+          </div>
+        </div>
+        <div class="genai-modal-body">
+          <div class="genai-modal-section">
+            <h5 class="genai-modal-sec-title">Description</h5>
+            <p id="genaiModalDesc"></p>
+          </div>
+          <div class="genai-modal-section">
+            <h5 class="genai-modal-sec-title">How I Use It</h5>
+            <p id="genaiModalUsage"></p>
+          </div>
+          <div class="genai-modal-section">
+            <h5 class="genai-modal-sec-title">Use Cases</h5>
+            <ul class="genai-modal-cases" id="genaiModalCases"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--
+  ===================
     Certificate
   ===================
   -->
@@ -1242,6 +1299,7 @@
   <script src="assets/js/custom-scripts.js"></script>
   <script src="assets/myjs/hero-typer.js"></script>
   <script src="assets/myjs/projects.js"></script>
+  <script src="assets/myjs/genai.js"></script>
 
 
 
