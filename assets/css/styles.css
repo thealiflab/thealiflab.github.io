@@ -3305,7 +3305,7 @@ BLOG Single Post Pagination
 
 /* ---- Role typing animation ---- */
 #role-typing {
-  background: linear-gradient(90deg, #1089ff 0%, #a855f7 50%, #06b6d4 100%);
+  background: linear-gradient(90deg, #0047ab 0%, #1089ff 30%, #56b4ff 60%, #1089ff 80%, #0047ab 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
