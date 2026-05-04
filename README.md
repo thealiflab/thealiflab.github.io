@@ -58,6 +58,7 @@ thealiflab.github.io/
 
 | File | Purpose |
 |---|---|
+| `theme-toggle.js` | Light / dark mode toggle — syncs icon, applies `dark-mode` class, persists to `localStorage` |
 | `hero-typer.js` | Typing animation for role titles in the hero section |
 | `hero-stats.js` | Count-up animation for the fun stats widget (IntersectionObserver) |
 | `projects.js` | Project grid filtering and show more / less logic |
@@ -85,6 +86,17 @@ There are no linting, test, or build commands.
 ## Deployment
 
 Push to the `main` branch. GitHub Pages serves the site automatically from the repository root.
+
+---
+
+## Dark Mode
+
+A sun/moon toggle button is fixed in the top-right corner. Clicking it adds/removes the `dark-mode` class on `<body>` and saves the preference to `localStorage` so it persists across visits.
+
+Implementation notes:
+- An inline `<script>` immediately after the `<body>` tag restores the saved class before any paint, preventing a flash of the wrong theme.
+- All dark mode overrides live at the bottom of `styles.css` under the `/* DARK MODE */` comment block, scoped to `body.dark-mode`.
+- The existing `white-vertion` class stays on `<body>` at all times; dark mode rules use higher specificity (`body.dark-mode.white-vertion`) to override the light theme defaults.
 
 ---
 

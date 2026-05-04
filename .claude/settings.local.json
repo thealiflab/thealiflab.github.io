@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:icons8.com)"
+      "WebFetch(domain:icons8.com)",
+      "Bash(git stash *)",
+      "Bash(findstr /n \"\\\\.mh-home\\\\|\\\\.mh-about\\\\|\\\\.mh-experince\\\\|\\\\.mh-portfolio\\\\|\\\\.mh-genai\\\\|\\\\.mh-certificate\\\\|\\\\.mh-footer {\" assets/css/styles.css)",
+      "Bash(findstr \"\\\\.mh-home\\\\|\\\\.mh-about\\\\|\\\\.mh-experince\\\\|\\\\.mh-portfolio\\\\|\\\\.mh-genai\\\\|\\\\.mh-certificate\\\\|\\\\.mh-footer \" assets/css/styles.css)",
+      "PowerShell(Select-String *)"
     ]
   }
 }
