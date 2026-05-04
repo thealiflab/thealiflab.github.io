@@ -4885,7 +4885,6 @@ body.dark-mode .navbar-toggler .icon::before,
 body.dark-mode .navbar-toggler .icon::after { background-color: #e6edf3 !important; }
 
 /* ── Hero section ─────────────────────────────────────────────── */
-body.dark-mode .mh-home { background-color: #0d1117; }
 body.dark-mode .mh-header-info h2 { color: #e6edf3 !important; }
 
 body.dark-mode .hero-location { color: #8b949e !important; opacity: 1 !important; }
@@ -4909,7 +4908,6 @@ body.dark-mode .hero-stat-card {
 body.dark-mode .hero-stat-label { color: #8b949e !important; }
 
 /* ── About / Skills ───────────────────────────────────────────── */
-body.dark-mode .mh-about { background-color: #0d1117; }
 body.dark-mode .mh-about-inner p { color: #c9d1d9 !important; }
 body.dark-mode .stack-section-title { color: #e6edf3 !important; }
 
@@ -4940,8 +4938,6 @@ body.dark-mode .skill-chip:hover {
 }
 
 /* ── Experience / Timeline ────────────────────────────────────── */
-body.dark-mode .mh-experince { background-color: #0d1117; }
-body.dark-mode .bolor-overlay { background-color: #0d1117 !important; }
 body.dark-mode .prodev-title { color: #e6edf3 !important; }
 
 body.dark-mode .tl-card {
@@ -4961,7 +4957,6 @@ body.dark-mode .tl-card.tl-card-achievement .mh-eduyear {
 }
 
 /* ── Projects ─────────────────────────────────────────────────── */
-body.dark-mode .mh-portfolio { background-color: #0d1117; }
 body.dark-mode .section-title h3 { color: #e6edf3 !important; }
 
 body.dark-mode .proj-filter-btn {
@@ -5027,7 +5022,6 @@ body.dark-mode .proj-show-more-btn:hover {
 }
 
 /* ── GenAI section ────────────────────────────────────────────── */
-body.dark-mode .mh-genai { background-color: #0d1117; }
 body.dark-mode .genai-subheading { color: #8b949e !important; }
 
 /* Tier row backgrounds — override the inline --row-bg CSS var */
@@ -5074,11 +5068,7 @@ body.dark-mode .genai-modal-logo-fb {
   color: #8b949e !important;
 }
 
-/* ── Certificates ─────────────────────────────────────────────── */
-body.dark-mode .mh-certificate { background-color: #0d1117; }
-
 /* ── Contact ──────────────────────────────────────────────────── */
-body.dark-mode .mh-footer { background-color: #0d1117; }
 body.dark-mode .ct-panel-heading { color: #e6edf3 !important; }
 body.dark-mode .ct-tagline { color: #8b949e !important; }
 body.dark-mode .ct-detail-label { color: #8b949e !important; opacity: 1 !important; }
@@ -5122,7 +5112,6 @@ body.dark-mode .ct-form-panel .contact-message:focus {
 body.dark-mode .ct-form-panel ::placeholder { color: transparent !important; }
 
 /* ── Footer ───────────────────────────────────────────────────── */
-body.dark-mode footer { background-color: #0d1117; }
 body.dark-mode .ct-copyright a { color: #8b949e !important; opacity: 1 !important; }
 
 /* ── Back to Top ──────────────────────────────────────────────── */
