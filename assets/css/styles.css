@@ -4863,8 +4863,9 @@ body.dark-mode .role-cursor             { color: #1089ff !important; -webkit-tex
 body.dark-mode .hero-stat-num           { color: #1089ff !important; -webkit-text-fill-color: #1089ff !important; }
 body.dark-mode .hero-cta-primary        { color: #fff !important; }
 body.dark-mode .achievement-dot i,
-body.dark-mode .work-dot i,
-body.dark-mode .edu-dot i               { color: #fff !important; }
+body.dark-mode .work-dot i              { color: #fff !important; }
+body.dark-mode .edu-dot                 { background: #0d1117 !important; }
+body.dark-mode .edu-dot i               { color: #1089ff !important; }
 
 /* ── Navigation ───────────────────────────────────────────────── */
 body.dark-mode .mh-header {
