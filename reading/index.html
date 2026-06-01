@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-  <title>Alif | Blog </title>
+  <title>Alif | Reading </title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="description" content="aliflab blog" />
-  <meta name="keywords" content="aliflab blogging blog tech-blog" />
+  <meta name="description" content="Books I've read, with my ratings and reviews." />
+  <meta name="keywords" content="aliflab reading books book-reviews reading-list" />
   <meta name="developer" content="Ahmed Alif">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -31,7 +31,7 @@
 
   <!-- Google Font-->
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-  <!-- Blog theme fonts: Poppins (UI) + Lora (reading) -->
+  <!-- Theme fonts: Poppins (UI) + Lora (reading) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -99,10 +99,10 @@
                 <a class="nav-link" href="../index.html#mh-certificate">Certificates</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#">Blog</a>
+                <a class="nav-link" href="../blog/index.html">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../reading/index.html">Reading</a>
+                <a class="nav-link active" href="index.html">Reading</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../index.html#mh-contact">Contact</a>
@@ -116,16 +116,16 @@
 
   <!--
     ===================
-       Blog heading
+       Reading heading
     ===================
     -->
 
-  <section class="mh-home" id="mh-blog">
+  <section class="mh-home" id="mh-reading-head">
     <div class="img-foverlay img-color-overlay">
       <div class="container">
         <div class="row section-separator-second">
           <div class="mh-page-title text-center col-sm-12">
-            <p class="blog-page-heading text-center">BLOG</p>
+            <p class="blog-page-heading text-center">READING</p>
             <p class="blog-post-style"><em> "A reader lives a thousand lives before he dies. The man who never reads lives only one." - George R.R. Martin </em></p>
           </div>
         </div>
@@ -135,92 +135,29 @@
 
   <!--
     ===================
-       Blog Posts
+       Reading List
     ===================
     -->
-  <section id="blog" class="padding-top">
+  <section id="reading" class="padding-top">
     <div class="container">
 
-      <!-- Category filters -->
-      <div class="blog-filters">
-        <button class="blog-filter-btn active" data-filter="*">All</button>
-        <button class="blog-filter-btn" data-filter="thoughts">Thoughts</button>
-        <button class="blog-filter-btn" data-filter="science-fiction">Science-Fiction</button>
-      </div>
+      <!-- Affiliate disclosure -->
+      <p class="reading-disclosure">
+        <i class="fa-solid fa-circle-info"></i>
+        As an Amazon Associate I earn from qualifying purchases. Some links on this page are affiliate links.
+      </p>
 
-      <div class="blog-grid" id="blog-list">
+      <!-- Cards are rendered here from assets/myjs/reading-data.js -->
+      <div class="reading-grid" id="reading-list"></div>
 
-        <!-- Post 1 -->
-        <a class="blog-card" href="why-do-developers-love-coffee.html" data-category="thoughts">
-          <div class="blog-card-img-wrap">
-            <img src="../assets/images/coffee.jpg" alt="Why Do Developers Love Coffee?" class="blog-card-img">
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-card-tag">Thoughts</span>
-              <span class="blog-card-date"><i class="fa-regular fa-calendar"></i> 07 May 2020</span>
-            </div>
-            <h4 class="blog-card-title">Why Do Developers Love Coffee?</h4>
-            <p class="blog-card-desc">Frankly, I'm obsessed with coffee. Some say a morning without a cup of coffee is a complete no-no! So what do you think? Is it overrated or just a techie showoff?</p>
-            <span class="blog-card-readmore">Read More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
-
-        <!-- Post 2 -->
-        <a class="blog-card" href="theory-of-thinking.html" data-category="science-fiction">
-          <div class="blog-card-img-wrap">
-            <img src="../assets/images/TOT.jpg" alt="Theory of Thinking" class="blog-card-img">
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-card-tag">Science-Fiction</span>
-              <span class="blog-card-date"><i class="fa-regular fa-calendar"></i> 27 Dec 2019</span>
-            </div>
-            <h4 class="blog-card-title">Theory of Thinking</h4>
-            <p class="blog-card-desc">"The mind is an essence independent of the matter with its nature but has to do with its actions" — a beautiful definition of mind. The human mind is a complex thing.</p>
-            <span class="blog-card-readmore">Read More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
-
-        <!-- Post 3 -->
-        <a class="blog-card" href="CSE-in-my-point-of-view.html" data-category="thoughts">
-          <div class="blog-card-img-wrap">
-            <img src="../assets/images/cse.jpg" alt="CSE in my point of View" class="blog-card-img">
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-card-tag">Thoughts</span>
-              <span class="blog-card-date"><i class="fa-regular fa-calendar"></i> 25 Dec 2019</span>
-            </div>
-            <h4 class="blog-card-title">CSE in my point of View</h4>
-            <p class="blog-card-desc">Computer Science and Engineering is an undergraduate program that lets you work in the advanced area of information and technology. At the very beginning, CSE was a sub-field of EEE.</p>
-            <span class="blog-card-readmore">Read More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
-
-        <!-- Post 4 -->
-        <a class="blog-card" href="a-call-that-came-straight-from-heaven.html" data-category="thoughts">
-          <div class="blog-card-img-wrap">
-            <img src="../assets/images/call.jpg" alt="A call that came straight from heaven" class="blog-card-img">
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="blog-card-tag">Thoughts</span>
-              <span class="blog-card-date"><i class="fa-regular fa-calendar"></i> 22 Dec 2019</span>
-            </div>
-            <h4 class="blog-card-title">A call that came straight from heaven</h4>
-            <p class="blog-card-desc">It was the time of winter and winter means laziness. We all know it's tremendously difficult to wake up early in the morning. After a long week at university, finally it comes — our desired Friday.</p>
-            <span class="blog-card-readmore">Read More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </a>
-
-      </div>
-
-      <p class="blog-empty" id="blog-empty" hidden>No posts in this category yet.</p>
+      <p class="reading-empty" id="reading-empty" hidden>No books added yet — check back soon.</p>
+      <noscript>
+        <p class="reading-empty">This reading list needs JavaScript enabled to display.</p>
+      </noscript>
 
     </div>
   </section>
-  <!--/#blog-->
+  <!--/#reading-->
 
   <!--
    ===================
@@ -277,49 +214,21 @@
   <script src="../assets/plugins/js/validator.min.js"></script>
   <!-- wow -->
   <script src="../assets/plugins/js/wow.min.js"></script>
-  <!-- mixin js-->
-  <script src="../../cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
   <!-- circle progress-->
   <script src="../assets/plugins/js/circle-progress.js"></script>
   <!-- jquery nav -->
   <script src="../assets/plugins/js/jquery.nav.js"></script>
   <!-- Fancybox js-->
   <script src="../assets/plugins/js/jquery.fancybox.min.js"></script>
-  <!-- isotope js-->
-  <script src="../assets/plugins/js/isotope.pkgd.js"></script>
-  <script src="../assets/plugins/js/packery-mode.pkgd.js"></script>
   <!-- Custom Scripts-->
   <script src="../assets/js/custom-scripts.js"></script>
 
   <!-- Theme toggle -->
   <script src="../assets/myjs/theme-toggle.js"></script>
 
-  <!-- Blog category filter -->
-  <script>
-    (function () {
-      var buttons = document.querySelectorAll('.blog-filter-btn');
-      var cards = document.querySelectorAll('#blog-list .blog-card');
-      var empty = document.getElementById('blog-empty');
-
-      function applyFilter(filter) {
-        var visible = 0;
-        cards.forEach(function (card) {
-          var match = filter === '*' || card.getAttribute('data-category') === filter;
-          card.classList.toggle('blog-hidden', !match);
-          if (match) visible++;
-        });
-        if (empty) empty.hidden = visible !== 0;
-      }
-
-      buttons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          buttons.forEach(function (b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-          applyFilter(btn.getAttribute('data-filter'));
-        });
-      });
-    })();
-  </script>
+  <!-- Reading data (edit this) + renderer -->
+  <script src="../assets/myjs/reading-data.js"></script>
+  <script src="../assets/myjs/reading.js"></script>
 
 </body>
 
