@@ -5364,3 +5364,98 @@ body.dark-mode #topButton:hover {
   background-color: #1089ff !important;
   color: #fff !important;
 }
+
+/* ==============================================================
+   BLOG — theme-aware typography & design
+   Light : Poppins headings + Lora serif reading on paper-white
+   Dark  : Poppins headings + Poppins sans reading on slate
+   (The reading font itself switches with the theme.)
+   ============================================================== */
+
+/* ── Hero heading + quote (blog index + post pages) ───────────── */
+.blog-page-heading {
+  font-family: "Poppins", "Roboto Slab", sans-serif;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+.blog-post-style {
+  font-family: "Lora", Georgia, serif;
+}
+.blog-post-style em {
+  font-style: italic;
+}
+
+/* ── Blog index cards (scoped to #blog so the homepage is untouched) ── */
+#blog .blog-card-title {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -0.3px;
+}
+#blog .blog-card-desc {
+  font-family: "Lora", Georgia, serif;
+}
+body.dark-mode #blog .blog-card-desc {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ── Article reading (post pages) — LIGHT ─────────────────────── */
+.mh-blog .mh-blog-item.blog-single h2 {
+  font-family: "Poppins", "Roboto Slab", sans-serif;
+  font-style: normal;
+  letter-spacing: -0.6px;
+  color: #1a2533;
+}
+.mh-blog .mh-blog-item.blog-single .blog-inner p {
+  font-family: "Lora", Georgia, serif;
+  font-size: 1.12rem;
+  line-height: 1.95;
+  color: #2d3540;
+}
+.mh-blog .mh-blog-item.blog-single img {
+  border-radius: 12px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* ── DARK MODE — colours + reading font swap ──────────────────── */
+body.dark-mode .blog-page-heading { color: #e6edf3; }
+body.dark-mode .blog-post-style,
+body.dark-mode .blog-post-style em { color: #8b949e; }
+
+/* Hero overlay panel: let the dark page show through */
+body.dark-mode .img-color-overlay { background-color: transparent; }
+
+/* Article surface */
+body.dark-mode .mh-blog .mh-blog-item.blog-single h2,
+body.dark-mode .mh-blog .mh-blog-item.blog-single h2 a { color: #e6edf3; }
+body.dark-mode .mh-blog .mh-blog-item.blog-single .blog-inner p {
+  font-family: "Poppins", -apple-system, "Segoe UI", sans-serif;
+  color: #c9d1d9;
+}
+body.dark-mode .mh-blog .mh-blog-item .blog-inner a { color: #c9d1d9; }
+body.dark-mode .mh-blog .mh-blog-item .blog-inner h2 a:hover { color: #58a6ff; }
+body.dark-mode .mh-blog-post-info,
+body.dark-mode .mh-blog-post-info a { color: #8b949e; }
+body.dark-mode .mh-blog .mh-blog-item.blog-single img {
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.5);
+}
+
+/* Prev / next + related-post box */
+body.dark-mode .mh-blog-next-prev-post a { color: #58a6ff; }
+body.dark-mode .mh-related-post,
+body.dark-mode .sidebar-item {
+  background: #161b22;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* Sidebar categories */
+body.dark-mode .sidebar-catagory,
+body.dark-mode .sidebar-item h3 { color: #e6edf3; }
+body.dark-mode .sidebar-catagory a,
+body.dark-mode .mh-blog-category ul li a { color: #8b949e; }
+body.dark-mode .sidebar-catagory a:hover,
+body.dark-mode .mh-blog-category ul li a:hover { color: #58a6ff; }
+
+/* Footer (post pages use .mh-footer .mh-copyright) */
+body.dark-mode .mh-footer .mh-copyright a { color: #c9d1d9; opacity: 1; }
+body.dark-mode .mh-footer .social-icon li a { color: #8b949e; }
+body.dark-mode .mh-footer .social-icon li a:hover { color: #58a6ff; }
+body.dark-mode .blog-empty { color: #6e7681; }

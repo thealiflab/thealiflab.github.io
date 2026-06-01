@@ -5,7 +5,10 @@
       "Bash(git stash *)",
       "Bash(findstr /n \"\\\\.mh-home\\\\|\\\\.mh-about\\\\|\\\\.mh-experince\\\\|\\\\.mh-portfolio\\\\|\\\\.mh-genai\\\\|\\\\.mh-certificate\\\\|\\\\.mh-footer {\" assets/css/styles.css)",
       "Bash(findstr \"\\\\.mh-home\\\\|\\\\.mh-about\\\\|\\\\.mh-experince\\\\|\\\\.mh-portfolio\\\\|\\\\.mh-genai\\\\|\\\\.mh-certificate\\\\|\\\\.mh-footer \" assets/css/styles.css)",
-      "PowerShell(Select-String *)"
+      "PowerShell(Select-String *)",
+      "Read(//c/Users/swopn/OneDrive/Documents/MY_PROJECTS/**)",
+      "Bash(awk 'NR>=5367' css/../css/styles.css)",
+      "Bash(node -e \"const c=require\\('fs'\\).readFileSync\\('assets/css/styles.css','utf8'\\);const o=\\(c.match\\(/{/g\\)||[]\\).length,cl=\\(c.match\\(/}/g\\)||[]\\).length;console.log\\('open',o,'close',cl,o===cl?'BALANCED':'MISMATCH'\\)\")"
     ]
   }
 }

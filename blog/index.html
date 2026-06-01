@@ -31,6 +31,9 @@
 
   <!-- Google Font-->
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+  <!-- Blog theme fonts: Poppins (UI) + Lora (reading) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -54,6 +57,10 @@
 
 <body>
   <script>if(localStorage.getItem('theme')==='dark'){document.body.classList.add('dark-mode');}</script>
+
+  <button class="theme-toggle-btn" id="themeToggle" aria-label="Switch to dark mode">
+    <i class="fa-solid fa-moon"></i>
+  </button>
   <!--
     ===================
        NAVIGATION
@@ -289,6 +296,9 @@
   <script src="../assets/plugins/js/packery-mode.pkgd.js"></script>
   <!-- Custom Scripts-->
   <script src="../assets/js/custom-scripts.js"></script>
+
+  <!-- Theme toggle -->
+  <script src="../assets/myjs/theme-toggle.js"></script>
 
   <!-- Blog category filter -->
   <script>

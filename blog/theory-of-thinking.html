@@ -31,9 +31,12 @@
 
   <!-- Google Font-->
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+  <!-- Blog theme fonts: Poppins (UI) + Lora (reading) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../assets/icons/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="../assets/plugins/css/bootstrap.min.css">
   <!-- Animate CSS-->
@@ -75,6 +78,7 @@
         ===================
         -->
   <script>if(localStorage.getItem('theme')==='dark'){document.body.classList.add('dark-mode');}</script>
+  <button class="theme-toggle-btn" id="themeToggle" aria-label="Switch to dark mode"><i class="fa-solid fa-moon"></i></button>
   <header class="black-bg mh-header nav-scroll mh-xs-mobile-nav wow fadeInUp" id="mh-header">
     <div class="overlay"></div>
     <div class="container">
@@ -236,10 +240,10 @@
             <div class="col-sm-12 ">
               <div class="row mh-related-post">
                 <div class="mh-blog-next-prev-post col-md-6 text-left">
-                  <a href="a-call-that-came-straight-from-heaven.html"><i class="fa fa-angle-left"></i> Previous Post</a>
+                  <a href="a-call-that-came-straight-from-heaven.html"><i class="fa-solid fa-angle-left"></i> Previous Post</a>
                 </div>
                 <div class="mh-blog-next-prev-post col-md-6 text-right">
-                  <a href="CSE-in-my-point-of-view.html">Next Post <i class="fa fa-angle-right"></i></a>
+                  <a href="CSE-in-my-point-of-view.html">Next Post <i class="fa-solid fa-angle-right"></i></a>
                 </div>
               </div>
             </div>
@@ -289,10 +293,10 @@
             </div>
             <div class="col-sm-6">
               <ul class="social-icon">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa fa-github"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-dribbble"></i></a></li>
               </ul>
             </div>
           </div>
@@ -308,7 +312,7 @@
     ===================
     -->
 
-  <button id="topButton" type="button" name="button"> <i class="fa fa-arrow-up"></i> </button>
+  <button id="topButton" type="button" name="button"> <i class="fa-solid fa-arrow-up"></i> </button>
   <script type="text/javascript" src="../assets/js/top.js"></script>
 
   <!-- particle backgound js files -->
@@ -350,6 +354,8 @@
   <script src="../assets/plugins/js/packery-mode.pkgd.js"></script>
   <!-- Custom Scripts-->
   <script src="../assets/js/custom-scripts.js"></script>
+  <!-- Theme toggle -->
+  <script src="../assets/myjs/theme-toggle.js"></script>
 </body>
 
 </html>
