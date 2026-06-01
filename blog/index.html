@@ -33,7 +33,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../assets/icons/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="../assets/plugins/css/bootstrap.min.css">
   <!-- Animate CSS-->
@@ -42,14 +42,6 @@
   <link rel="stylesheet" href="../assets/plugins/css/owl.css">
   <!-- Fancybox-->
   <link rel="stylesheet" href="../assets/plugins/css/jquery.fancybox.min.css">
-
-  <!-- Constant -->
-  <script src="assests/myjs/constant.js"></script>
-
-  <!-- PassKey -->
-  <script src="assests/myjs/pkey.js"></script>
-
-  <!-- PassKey -->
 
   <!-- JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -61,6 +53,7 @@
 </head>
 
 <body>
+  <script>if(localStorage.getItem('theme')==='dark'){document.body.classList.add('dark-mode');}</script>
   <!--
     ===================
        NAVIGATION
@@ -134,112 +127,84 @@
     -->
   <section id="blog" class="padding-top">
     <div class="container">
-      <div class="row">
-        <div class="col-md-9 col-sm-7">
-          <div class="row">
-            <div class="col-sm-12 col-md-12">
 
-              <!-- From here the single post elements start -->
-              <div class="single-blog single-column">
-                <div class="post-thumb">
-                  <a href="why-do-developers-love-coffee.html"><img src="../assets/images/coffee.jpg" class="img-responsive" alt="LoveforCoffee" style="width:372px;height:262px;"></a>
-                  <div class="post-overlay">
-                    <span class="uppercase"><a href="#">07 <br><small>May</small></a></span>
-                  </div>
-                </div>
-                <div class="post-content overflow">
-                  <h2 class="post-title bold"><a href="why-do-developers-love-coffee.html">Why Do Developers Love Coffee?</a></h2>
-                  <p>Frankly, I’m obsessed with coffee. Some say a morning without a cup of coffee is a complete no-no! So what do you think? Is it overrated or just a techie showoff? I questioned these to myself in earlier days but after then I realized that actually coffee works like magic. [...]</p>
-                  <a href="why-do-developers-love-coffee.html" class="read-more">View More</a>
+      <!-- Category filters -->
+      <div class="blog-filters">
+        <button class="blog-filter-btn active" data-filter="*">All</button>
+        <button class="blog-filter-btn" data-filter="thoughts">Thoughts</button>
+        <button class="blog-filter-btn" data-filter="science-fiction">Science-Fiction</button>
+      </div>
 
-                </div>
-              </div>
-              <!-- single post elements end -->
-              
-              <div class="single-blog single-column">
-                <div class="post-thumb">
-                  <a href="theory-of-thinking.html"><img src="../assets/images/TOT.jpg" class="img-responsive" alt="TheoryofThinking" style="width:372px;height:262px;"></a>
-                  <div class="post-overlay">
-                    <span class="uppercase"><a href="#">27 <br><small>Dec</small></a></span>
-                  </div>
-                </div>
-                <div class="post-content overflow">
-                  <h2 class="post-title bold"><a href="theory-of-thinking.html">Theoy of Thinking</a></h2>
-                  <p>"The mind is an essence independent of the matter with its nature but has to do with its actions" - It is the beautiful definition of mind. The human mind is a complex thing. Even these days, people still couldn’t find out the
-                    mystery of the mind. [...]</p>
-                  <a href="theory-of-thinking.html" class="read-more">View More</a>
+      <div class="blog-grid" id="blog-list">
 
-                </div>
-              </div>
-
-            </div>
-            <div class="col-sm-12 col-md-12">
-              <div class="single-blog single-column">
-                <div class="post-thumb">
-                  <a href="CSE-in-my-point-of-view.html"><img src="../assets/images/cse.jpg" class="img-responsive" alt="ComputerScience&Engineering" style="width:372px;height:262px;"></a>
-                  <div class="post-overlay">
-                    <span class="uppercase"><a href="#">25 <br><small>Dec</small></a></span>
-                  </div>
-                </div>
-                <div class="post-content overflow">
-                  <h2 class="post-title bold"><a href="CSE-in-my-point-of-view.html">CSE in my point of View</a></h2>
-                  <p>Computer Science and Engineering is an academic undergraduate program in all over the world which allow you to work in the advance area of Information and technology. At very the beginning, Computer Science and Engineering (CSE)
-                    was a sub-field of Electrical and Electronic Engineering (EEE) [...]</p>
-                  <a href="CSE-in-my-point-of-view.html" class="read-more">View More</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-12 col-md-12">
-              <div class="single-blog single-column">
-                <div class="post-thumb">
-                  <a href="a-call-that-came-straight-from-heaven.html"><img src="../assets/images/call.jpg" class="img-responsive" alt="" style="width:372px;height:262px;"></a>
-                  <div class="post-overlay">
-                    <span class="uppercase"><a href="#">22 <br><small>Dec</small></a></span>
-                  </div>
-                </div>
-                <div class="post-content overflow">
-                  <h2 class="post-title bold"><a href="a-call-that-came-straight-from-heaven.html">A call that came straight from heaven</a></h2>
-                  <p>It was the time of winter and winter means laziness. We all know that it is tremendously difficult to wake up early in the morning. Seriously you need a strong will to do that. After struggling all week in university, finally it
-                    comes, our desired Friday. [...]</p>
-                  <a href="a-call-that-came-straight-from-heaven.html" class="read-more">View More</a>
-
-                </div>
-              </div>
-            </div>
+        <!-- Post 1 -->
+        <a class="blog-card" href="why-do-developers-love-coffee.html" data-category="thoughts">
+          <div class="blog-card-img-wrap">
+            <img src="../assets/images/coffee.jpg" alt="Why Do Developers Love Coffee?" class="blog-card-img">
           </div>
-
-          <div class="blog-pagination">
-            <ul class="pagination">
-              <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-              <li class="active"><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <!--
-      ===================
-          Blog SIDEBAR
-      ===================
-       -->
-        <div class="col-md-3 col-sm-5">
-          <div class="mh-blog-sidebar">
-            <div class="sidebar-item mh-blog-category">
-              <h3 class="sidebar-catagory">Category</h3>
-              <ul class="sidebar-catagory">
-                <li><a href="#">Story</a></li>
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Thoughts</a></li>
-                <li><a href="#">Travel</a></li>
-                <li><a href="#">Science-Fiction</a></li>
-              </ul>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span class="blog-card-tag">Thoughts</span>
+              <span class="blog-card-date"><i class="fa-regular fa-calendar"></i> 07 May 2020</span>
             </div>
+            <h4 class="blog-card-title">Why Do Developers Love Coffee?</h4>
+            <p class="blog-card-desc">Frankly, I'm obsessed with coffee. Some say a morning without a cup of coffee is a complete no-no! So what do you think? Is it overrated or just a techie showoff?</p>
+            <span class="blog-card-readmore">Read More <i class="fa-solid fa-arrow-right"></i></span>
           </div>
-        </div>
+        </a>
+
+        <!-- Post 2 -->
+        <a class="blog-card" href="theory-of-thinking.html" data-category="science-fiction">
+          <div class="blog-card-img-wrap">
+            <img src="../assets/images/TOT.jpg" alt="Theory of Thinking" class="blog-card-img">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span class="blog-card-tag">Science-Fiction</span>
+              <span class="blog-card-date"><i class="fa-regular fa-calendar"></i> 27 Dec 2019</span>
+            </div>
+            <h4 class="blog-card-title">Theory of Thinking</h4>
+            <p class="blog-card-desc">"The mind is an essence independent of the matter with its nature but has to do with its actions" — a beautiful definition of mind. The human mind is a complex thing.</p>
+            <span class="blog-card-readmore">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Post 3 -->
+        <a class="blog-card" href="CSE-in-my-point-of-view.html" data-category="thoughts">
+          <div class="blog-card-img-wrap">
+            <img src="../assets/images/cse.jpg" alt="CSE in my point of View" class="blog-card-img">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span class="blog-card-tag">Thoughts</span>
+              <span class="blog-card-date"><i class="fa-regular fa-calendar"></i> 25 Dec 2019</span>
+            </div>
+            <h4 class="blog-card-title">CSE in my point of View</h4>
+            <p class="blog-card-desc">Computer Science and Engineering is an undergraduate program that lets you work in the advanced area of information and technology. At the very beginning, CSE was a sub-field of EEE.</p>
+            <span class="blog-card-readmore">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Post 4 -->
+        <a class="blog-card" href="a-call-that-came-straight-from-heaven.html" data-category="thoughts">
+          <div class="blog-card-img-wrap">
+            <img src="../assets/images/call.jpg" alt="A call that came straight from heaven" class="blog-card-img">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span class="blog-card-tag">Thoughts</span>
+              <span class="blog-card-date"><i class="fa-regular fa-calendar"></i> 22 Dec 2019</span>
+            </div>
+            <h4 class="blog-card-title">A call that came straight from heaven</h4>
+            <p class="blog-card-desc">It was the time of winter and winter means laziness. We all know it's tremendously difficult to wake up early in the morning. After a long week at university, finally it comes — our desired Friday.</p>
+            <span class="blog-card-readmore">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
 
       </div>
+
+      <p class="blog-empty" id="blog-empty" hidden>No posts in this category yet.</p>
+
     </div>
   </section>
   <!--/#blog-->
@@ -262,10 +227,10 @@
             </div>
             <div class="col-sm-6">
               <ul class="social-icon">
-                <li><a href="https://www.facebook.com/alif.0920" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="https://www.instagram.com/aliflabofficial" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="https://github.com/thealiflab" target="_blank"><i class="fa fa-github"></i></a></li>
-                <li><a href="https://www.behance.net/alif09" target="_blank"><i class="fa fa-behance"></i></a></li>
+                <li><a href="https://www.facebook.com/alif.0920" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/aliflabofficial" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://github.com/thealiflab" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://www.behance.net/alif09" target="_blank"><i class="fa-brands fa-behance"></i></a></li>
               </ul>
             </div>
           </div>
@@ -282,7 +247,7 @@
   ===================
   -->
 
-  <button id="topButton" type="button" name="button"> <i class="fa fa-arrow-up"></i> </button>
+  <button id="topButton" type="button" name="button"> <i class="fa-solid fa-arrow-up"></i> </button>
   <script type="text/javascript" src="../assets/js/top.js"></script>
 
   <!-- particle backgound js files -->
@@ -324,6 +289,33 @@
   <script src="../assets/plugins/js/packery-mode.pkgd.js"></script>
   <!-- Custom Scripts-->
   <script src="../assets/js/custom-scripts.js"></script>
+
+  <!-- Blog category filter -->
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll('.blog-filter-btn');
+      var cards = document.querySelectorAll('#blog-list .blog-card');
+      var empty = document.getElementById('blog-empty');
+
+      function applyFilter(filter) {
+        var visible = 0;
+        cards.forEach(function (card) {
+          var match = filter === '*' || card.getAttribute('data-category') === filter;
+          card.classList.toggle('blog-hidden', !match);
+          if (match) visible++;
+        });
+        if (empty) empty.hidden = visible !== 0;
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          buttons.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          applyFilter(btn.getAttribute('data-filter'));
+        });
+      });
+    })();
+  </script>
 
 </body>
 

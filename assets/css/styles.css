@@ -3879,6 +3879,218 @@ BLOG Single Post Pagination
 }
 
 /* =============================================
+   Blog section (homepage)
+   ============================================= */
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+/* Blog listing page filters */
+.blog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.blog-filter-btn {
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  border: 2px solid rgba(0,0,0,0.18);
+  background: transparent;
+  color: rgba(0,0,0,0.62);
+  letter-spacing: 0.3px;
+}
+
+.blog-filter-btn:hover {
+  border-color: #1089ff;
+  color: #1089ff;
+}
+
+.blog-filter-btn.active {
+  background: #1089ff;
+  border-color: #1089ff;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(16,137,255,0.28);
+}
+
+.blog-card.blog-hidden {
+  display: none;
+}
+
+.blog-empty {
+  text-align: center;
+  color: #999;
+  font-size: 15px;
+  margin-top: 30px;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+  border: 1.5px solid rgba(0,0,0,0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(16,137,255,0.18);
+  border-color: #1089ff;
+  text-decoration: none;
+}
+
+.blog-card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: #f5f7fa;
+  flex-shrink: 0;
+}
+
+.blog-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.blog-card:hover .blog-card-img {
+  transform: scale(1.06);
+}
+
+.blog-card-body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.blog-card-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: rgba(16,137,255,0.08);
+  color: #1089ff;
+  letter-spacing: 0.2px;
+}
+
+.blog-card-date {
+  font-size: 11px;
+  color: #999;
+  white-space: nowrap;
+}
+
+.blog-card-date i {
+  margin-right: 3px;
+}
+
+.blog-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+
+.blog-card-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 14px;
+  flex: 1;
+}
+
+.blog-card-readmore {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1089ff;
+  margin-top: auto;
+  transition: gap 0.2s ease;
+}
+
+.blog-card-readmore i {
+  margin-left: 5px;
+  transition: transform 0.22s ease;
+}
+
+.blog-card:hover .blog-card-readmore i {
+  transform: translateX(4px);
+}
+
+.blog-viewall-wrap {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.blog-viewall-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 36px;
+  border-radius: 32px;
+  border: 2px solid #1089ff;
+  background: transparent;
+  color: #1089ff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.22s, color 0.22s, box-shadow 0.22s, transform 0.22s;
+}
+
+.blog-viewall-btn:hover {
+  background: #1089ff;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(16,137,255,0.28);
+  transform: translateY(-2px);
+}
+
+.blog-viewall-btn i {
+  transition: transform 0.22s ease;
+}
+
+.blog-viewall-btn:hover i {
+  transform: translateX(4px);
+}
+
+@media (max-width: 991px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* =============================================
    Project Detail Modal
    ============================================= */
 
@@ -4984,6 +5196,33 @@ body.dark-mode .proj-card-desc { color: #8b949e !important; }
 body.dark-mode .proj-tag {
   background: rgba(16, 137, 255, 0.13) !important;
   color: #58a6ff !important;
+}
+
+/* Blog cards (dark) */
+body.dark-mode .blog-card {
+  background: #161b22 !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.35) !important;
+}
+body.dark-mode .blog-card:hover { border-color: #1089ff !important; }
+body.dark-mode .blog-card-img-wrap { background: #21262d !important; }
+body.dark-mode .blog-card-title { color: #e6edf3 !important; }
+body.dark-mode .blog-card-desc { color: #8b949e !important; }
+body.dark-mode .blog-card-date { color: #6e7681 !important; }
+body.dark-mode .blog-card-tag {
+  background: rgba(16, 137, 255, 0.13) !important;
+  color: #58a6ff !important;
+}
+body.dark-mode .blog-filter-btn {
+  background: #21262d !important;
+  color: #8b949e !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+body.dark-mode .blog-filter-btn:hover,
+body.dark-mode .blog-filter-btn.active {
+  background: #1089ff !important;
+  color: #fff !important;
+  border-color: #1089ff !important;
 }
 
 /* Project modal */
