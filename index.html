@@ -614,11 +614,29 @@
     <div class="container">
       <div class="row section-separator">
         <div class="col-sm-12">
-          <h3 class="prodev-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
-            <i class="fa-brands fa-github gh-title-icon"></i>GitHub Activity
-          </h3>
-          <div class="github-calendar-wrap wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-            <div class="calendar">Loading the data just for you&hellip;</div>
+          <h3 class="prodev-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">GitHub Activity</h3>
+
+          <div class="gh-card wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+
+            <div class="gh-stats">
+              <div class="gh-stat"><span class="gh-stat-num" id="gh-stat-total">--</span><span class="gh-stat-label">Total Pushes</span></div>
+              <div class="gh-stat"><span class="gh-stat-num" id="gh-stat-active">--</span><span class="gh-stat-label">Active Days</span></div>
+              <div class="gh-stat"><span class="gh-stat-num" id="gh-stat-current">--</span><span class="gh-stat-label">Current Streak</span></div>
+              <div class="gh-stat"><span class="gh-stat-num" id="gh-stat-longest">--</span><span class="gh-stat-label">Longest Streak</span></div>
+            </div>
+
+            <div class="calendar">Loading contribution data&hellip;</div>
+
+            <div class="gh-legend">
+              <span class="gh-legend-label">Less</span>
+              <span class="gh-leg" data-l="0"></span>
+              <span class="gh-leg" data-l="1"></span>
+              <span class="gh-leg" data-l="2"></span>
+              <span class="gh-leg" data-l="3"></span>
+              <span class="gh-leg" data-l="4"></span>
+              <span class="gh-legend-label">More</span>
+            </div>
+
           </div>
         </div>
       </div>

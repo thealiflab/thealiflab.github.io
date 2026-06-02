@@ -5670,242 +5670,223 @@ body.dark-mode .reading-empty { color: #6e7681; }
 }
 
 /**
- * ---------------------------------
- *  GitHub Contribution Calendar
- * ---------------------------------
- */
+ * ============================================================
+ *  GitHub Activity Widget
+ *  Clean card matching the site's design language:
+ *  - .proj-card style frame (white / #161b22, 16px radius, soft shadow)
+ *  - .hero-stat-card style stat chips (#1089ff accent)
+ *  - brand-blue contribution squares, light/dark adaptive
+ *  Uses the github-calendar library for live data + the day grid;
+ *  stat chips and legend are our own markup, populated by
+ *  github-stats.js. Square colours are driven by overriding the
+ *  library's --color-calendar-graph-day-* CSS variables.
+ * ============================================================ */
 
-/* ── Section title ── */
 .mh-github .prodev-title {
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  margin-bottom: 30px;
 }
 
-.gh-title-icon {
-  font-size: 26px;
-  color: #2c3e50;
-}
-
-body.dark-mode .gh-title-icon {
-  color: #e6edf3 !important;
-}
-
-/* ── Card wrapper — GitHub-style bordered card ── */
-.github-calendar-wrap {
-  max-width: 960px;
+/* ── Outer card (mirrors .proj-card) ── */
+.gh-card {
+  max-width: 940px;
   margin: 0 auto;
-  background: #ffffff;
-  border: 1px solid #d0d7de;
-  border-radius: 10px;
-  padding: 20px 24px 14px;
-  /* Override library's contribution square colors with GitHub's actual palette */
-  --color-calendar-graph-day-bg: #ebedf0;
-  --color-calendar-graph-day-L1-bg: #9be9a8;
-  --color-calendar-graph-day-L2-bg: #40c463;
-  --color-calendar-graph-day-L3-bg: #30a14e;
-  --color-calendar-graph-day-L4-bg: #216e39;
+  background: #fff;
+  border: 1.5px solid rgba(0, 0, 0, 0.07);
+  border-radius: 16px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07);
+  padding: 26px 28px 20px;
+  display: flex;
+  flex-direction: column;     /* stats → graph → legend, always contained */
+
+  /* Brand-blue square palette — overrides the library defaults for
+     every .ContributionCalendar-day descendant and the legend swatches */
+  --color-calendar-graph-day-bg:    #ebedf0;
+  --color-calendar-graph-day-L1-bg: #c6e0ff;
+  --color-calendar-graph-day-L2-bg: #7cb8ff;
+  --color-calendar-graph-day-L3-bg: #3d94f6;
+  --color-calendar-graph-day-L4-bg: #1089ff;
+  --gh-cell-edge: rgba(27, 31, 35, 0.06);
 }
 
-/* ── Strip library's own outer box; lay out with CSS grid ── */
-.github-calendar-wrap .calendar {
-  border: none !important;
-  border-radius: 0;
-  font-family: inherit;
-  text-align: left;
-  min-height: 0;
-  /* width: 100% ensures the grid fills the card; without it the library's
-     "margin: 0 auto" keeps the container from sizing to the 1fr tracks */
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+/* ── Stat chips (mirror .hero-stat-card) ── */
+.gh-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 24px;
 }
 
-/* ── Row 1: three stat boxes ── */
-/* Use explicit nth-child placement so grid-column is never left to
-   auto-placement (more reliable across browsers) and override the
-   library's width:1% on .table-column which can confuse grid sizing. */
-.github-calendar-wrap .calendar .contrib-column {
-  grid-row: 1;
-  /* explicit column assigned below via nth-child */
+.gh-stat {
+  flex: 1 1 150px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 12px;
-  text-align: center;
-  width: auto;     /* override library's width:1% on .table-column */
-  min-width: 0;    /* prevent grid blow-out */
-  background: #f6f8fa;
-  border-top: 1px solid #d0d7de;
-  border-bottom: 1px solid #d0d7de;
-  border-right: 1px solid #d0d7de;
+  gap: 6px;
+  padding: 14px 18px;
+  background: rgba(16, 137, 255, 0.05);
+  border: 1px solid rgba(16, 137, 255, 0.14);
+  border-radius: 12px;
 }
 
-/* js-yearly-contributions is child 1, so:
-   1st .contrib-column = nth-child(2), 2nd = nth-child(3), 3rd = nth-child(4) */
-.github-calendar-wrap .calendar .contrib-column:nth-child(2) { grid-column: 1; }
-.github-calendar-wrap .calendar .contrib-column:nth-child(3) { grid-column: 2; }
-.github-calendar-wrap .calendar .contrib-column:nth-child(4) { grid-column: 3; }
-
-.github-calendar-wrap .calendar .contrib-column-first {
-  border-left: 1px solid #d0d7de;
-  border-radius: 6px 0 0 6px;
-}
-
-.github-calendar-wrap .calendar .contrib-column:nth-child(4) {
-  border-radius: 0 6px 6px 0;
-}
-
-.github-calendar-wrap .calendar .contrib-number {
-  font-size: 22px;
+.gh-stat-num {
+  font-size: 30px;
   font-weight: 700;
-  color: #1f2328;
-  line-height: 1.25;
-  display: block;
-  margin-bottom: 3px;
+  line-height: 1;
+  color: #1089ff !important;
+  -webkit-text-fill-color: #1089ff;
 }
 
-.github-calendar-wrap .calendar .text-muted {
+.gh-stat-label {
   font-size: 11px;
-  color: #656d76 !important; /* override any cascade from white-vertion */
-  line-height: 1.5;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #5a6a7a !important;
+  line-height: 1.3;
 }
 
-/* ── Row 2: contribution grid, full width ── */
-.github-calendar-wrap .calendar .js-yearly-contributions {
-  grid-column: 1 / -1;
-  grid-row: 2;
+/* ── Calendar mount: library injects here ──
+   flex-wrap keeps the graph as its own full-width line so its height
+   propagates to the card (prevents the overflow we hit earlier). */
+.gh-card .calendar {
+  border: none !important;
+  border-radius: 0;
+  background: transparent;
+  text-align: left;
+  font-size: 12px;
+  color: #57606a;
+  min-height: 0;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* Hide the library's native chrome — we render our own stats + legend */
+.gh-card .calendar .contrib-column,
+.gh-card .calendar .contrib-footer,
+.gh-card .calendar h2.f4,
+.gh-card .calendar a.show-on-focus,
+.gh-card .calendar a[href^="#year-link-"] {
+  display: none !important;
+}
+
+.gh-card .calendar div.px-md-5 {
+  height: 0;
+}
+
+/* Graph wrapper: full-width line, horizontal scroll on small screens */
+.gh-card .calendar .js-yearly-contributions {
+  flex: 0 0 100%;
+  width: 100%;
+  min-height: 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  padding-top: 14px;
 }
 
-/* Strip the inner GitHub border/padding around the grid */
-.github-calendar-wrap .calendar .graph-before-activity-overview {
+.gh-card .calendar .js-calendar-graph {
+  min-height: 0;
+  flex-shrink: 0;
+}
+
+.gh-card .calendar .graph-before-activity-overview {
   border: none !important;
   padding: 0 !important;
 }
 
-/* Hide redundant heading (count already shown in first stat box) */
-.github-calendar-wrap .calendar h2.f4 {
-  display: none;
-}
-
-/* Remove blank spacer div the library injects */
-.github-calendar-wrap .calendar div.px-md-5 {
-  height: 0;
-}
-
-/* Hide GitHub's accessibility skip link */
-.github-calendar-wrap .calendar a.show-on-focus,
-.github-calendar-wrap .calendar a[href^="#year-link-"] {
-  display: none !important;
-}
-
-/* Month / weekday label colour */
-.github-calendar-wrap .calendar text.wday,
-.github-calendar-wrap .calendar text.month,
-.github-calendar-wrap .calendar .ContributionCalendar-label {
+/* Month / weekday labels */
+.gh-card .calendar text.wday,
+.gh-card .calendar text.month,
+.gh-card .calendar .ContributionCalendar-label {
   fill: #57606a !important;
 }
 
-/* ── Row 3: legend footer, full width ── */
-.github-calendar-wrap .calendar .contrib-footer {
-  grid-column: 1 / -1;
-  grid-row: 3;
-  height: auto;
-  padding: 8px 0 0;
-  color: #656d76;
+/* ── Day cells: solid rounded squares (GitHub-style, blue scale) ──
+   Background colour comes from the library's data-level rules, which
+   read the --color-calendar-graph-day-* variables overridden above. */
+.gh-card .calendar td.ContributionCalendar-day {
+  box-sizing: border-box;
+  width: 11px !important;
+  height: 11px !important;
+  padding: 0 !important;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px var(--gh-cell-edge);
 }
 
-.github-calendar-wrap .calendar .left.text-muted {
-  color: #656d76 !important;
+/* ── Legend: bottom-right, under the graph ── */
+.gh-legend {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 14px;
+  font-size: 11px;
+  color: #57606a !important;
 }
 
-/* ── Dark mode — GitHub's exact dark palette ── */
-body.dark-mode .github-calendar-wrap {
+.gh-legend-label {
+  color: #57606a !important;
+  margin: 0 3px;
+}
+
+.gh-leg {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px var(--gh-cell-edge);
+}
+.gh-leg[data-l='0'] { background: var(--color-calendar-graph-day-bg); }
+.gh-leg[data-l='1'] { background: var(--color-calendar-graph-day-L1-bg); }
+.gh-leg[data-l='2'] { background: var(--color-calendar-graph-day-L2-bg); }
+.gh-leg[data-l='3'] { background: var(--color-calendar-graph-day-L3-bg); }
+.gh-leg[data-l='4'] { background: var(--color-calendar-graph-day-L4-bg); }
+
+/* ── Dark mode (matches the site's #161b22 / #0d1117 dark palette) ── */
+body.dark-mode .gh-card {
   background: #161b22;
-  border-color: #30363d;
-  --color-calendar-graph-day-bg: #21262d;
-  --color-calendar-graph-day-L1-bg: #0e4429;
-  --color-calendar-graph-day-L2-bg: #006d32;
-  --color-calendar-graph-day-L3-bg: #26a641;
-  --color-calendar-graph-day-L4-bg: #39d353;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+
+  --color-calendar-graph-day-bg:    #21262d;
+  --color-calendar-graph-day-L1-bg: #0d335c;
+  --color-calendar-graph-day-L2-bg: #15518a;
+  --color-calendar-graph-day-L3-bg: #1e7fd4;
+  --color-calendar-graph-day-L4-bg: #4ba3ff;
+  --gh-cell-edge: rgba(255, 255, 255, 0.05);
 }
 
-body.dark-mode .github-calendar-wrap .calendar .contrib-column {
-  background: #0d1117;
-  border-color: #30363d;
+body.dark-mode .gh-stat {
+  background: rgba(16, 137, 255, 0.08);
+  border-color: rgba(16, 137, 255, 0.22);
 }
 
-body.dark-mode .github-calendar-wrap .calendar .contrib-number {
-  color: #e6edf3 !important;
+body.dark-mode .gh-stat-num {
+  color: #1089ff !important;
+  -webkit-text-fill-color: #1089ff;
 }
 
-body.dark-mode .github-calendar-wrap .calendar .text-muted {
+body.dark-mode .gh-stat-label {
   color: #8b949e !important;
 }
 
-body.dark-mode .github-calendar-wrap .calendar .left.text-muted,
-body.dark-mode .github-calendar-wrap .calendar .contrib-footer {
+body.dark-mode .gh-card .calendar,
+body.dark-mode .gh-legend,
+body.dark-mode .gh-legend-label {
   color: #8b949e !important;
 }
 
-body.dark-mode .github-calendar-wrap .calendar text.wday,
-body.dark-mode .github-calendar-wrap .calendar text.month,
-body.dark-mode .github-calendar-wrap .calendar .ContributionCalendar-label {
+body.dark-mode .gh-card .calendar text.wday,
+body.dark-mode .gh-card .calendar text.month,
+body.dark-mode .gh-card .calendar .ContributionCalendar-label {
   fill: #8b949e !important;
 }
 
-/* ── Responsive: stack stats vertically on small screens ── */
+/* ── Responsive ── */
 @media (max-width: 600px) {
-  .github-calendar-wrap {
-    padding: 16px 14px 12px;
-  }
-
-  .github-calendar-wrap .calendar {
-    grid-template-columns: 1fr;
-  }
-
-  /* Reset the explicit desktop grid-column values to col 1 */
-  .github-calendar-wrap .calendar .contrib-column:nth-child(2),
-  .github-calendar-wrap .calendar .contrib-column:nth-child(3),
-  .github-calendar-wrap .calendar .contrib-column:nth-child(4) {
-    grid-column: 1;
-  }
-
-  .github-calendar-wrap .calendar .contrib-column {
-    grid-row: auto;
-    border-left: 1px solid #d0d7de;
-    border-right: 1px solid #d0d7de;
-    border-top: none;
-    border-radius: 0;
-  }
-
-  .github-calendar-wrap .calendar .contrib-column-first {
-    border-top: 1px solid #d0d7de;
-    border-radius: 6px 6px 0 0;
-  }
-
-  .github-calendar-wrap .calendar .contrib-column:nth-child(4) {
-    border-bottom: 1px solid #d0d7de;
-    border-radius: 0 0 6px 6px;
-  }
-
-  .github-calendar-wrap .calendar .js-yearly-contributions {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .github-calendar-wrap .calendar .contrib-footer {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  body.dark-mode .github-calendar-wrap .calendar .contrib-column {
-    border-color: #30363d;
-  }
+  .gh-card     { padding: 18px 16px 16px; }
+  .gh-stat     { flex: 1 1 calc(50% - 7px); padding: 12px 14px; }
+  .gh-stat-num { font-size: 24px; }
 }
