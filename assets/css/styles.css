@@ -5716,31 +5716,45 @@ body.dark-mode .gh-title-icon {
   font-family: inherit;
   text-align: left;
   min-height: 0;
+  /* width: 100% ensures the grid fills the card; without it the library's
+     "margin: 0 auto" keeps the container from sizing to the 1fr tracks */
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-/* ── Row 1: three stat boxes, auto-placed left → right ── */
+/* ── Row 1: three stat boxes ── */
+/* Use explicit nth-child placement so grid-column is never left to
+   auto-placement (more reliable across browsers) and override the
+   library's width:1% on .table-column which can confuse grid sizing. */
 .github-calendar-wrap .calendar .contrib-column {
   grid-row: 1;
+  /* explicit column assigned below via nth-child */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 14px 12px;
+  padding: 16px 12px;
   text-align: center;
+  width: auto;     /* override library's width:1% on .table-column */
+  min-width: 0;    /* prevent grid blow-out */
   background: #f6f8fa;
   border-top: 1px solid #d0d7de;
   border-bottom: 1px solid #d0d7de;
   border-right: 1px solid #d0d7de;
 }
 
+/* js-yearly-contributions is child 1, so:
+   1st .contrib-column = nth-child(2), 2nd = nth-child(3), 3rd = nth-child(4) */
+.github-calendar-wrap .calendar .contrib-column:nth-child(2) { grid-column: 1; }
+.github-calendar-wrap .calendar .contrib-column:nth-child(3) { grid-column: 2; }
+.github-calendar-wrap .calendar .contrib-column:nth-child(4) { grid-column: 3; }
+
 .github-calendar-wrap .calendar .contrib-column-first {
   border-left: 1px solid #d0d7de;
   border-radius: 6px 0 0 6px;
 }
 
-/* js-yearly-contributions = child 1, so 3rd .contrib-column = child 4 */
 .github-calendar-wrap .calendar .contrib-column:nth-child(4) {
   border-radius: 0 6px 6px 0;
 }
@@ -5751,12 +5765,12 @@ body.dark-mode .gh-title-icon {
   color: #1f2328;
   line-height: 1.25;
   display: block;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .github-calendar-wrap .calendar .text-muted {
   font-size: 11px;
-  color: #656d76;
+  color: #656d76 !important; /* override any cascade from white-vertion */
   line-height: 1.5;
 }
 
@@ -5854,6 +5868,13 @@ body.dark-mode .github-calendar-wrap .calendar .ContributionCalendar-label {
 
   .github-calendar-wrap .calendar {
     grid-template-columns: 1fr;
+  }
+
+  /* Reset the explicit desktop grid-column values to col 1 */
+  .github-calendar-wrap .calendar .contrib-column:nth-child(2),
+  .github-calendar-wrap .calendar .contrib-column:nth-child(3),
+  .github-calendar-wrap .calendar .contrib-column:nth-child(4) {
+    grid-column: 1;
   }
 
   .github-calendar-wrap .calendar .contrib-column {
