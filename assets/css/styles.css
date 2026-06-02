@@ -5668,3 +5668,41 @@ body.dark-mode .reading-empty { color: #6e7681; }
     gap: 16px;
   }
 }
+
+/**
+ * ---------------------------------
+ *  GitHub Contribution Calendar
+ * ---------------------------------
+ */
+.mh-github .prodev-title {
+  margin-bottom: 30px;
+}
+.github-calendar-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.github-calendar-wrap .calendar {
+  min-width: 680px;
+}
+.github-calendar-wrap .calendar .contrib-column {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode legibility */
+.dark-vertion .mh-github .calendar,
+.dark-vertion .mh-github .calendar .contrib-footer,
+.dark-vertion .mh-github .calendar .text-muted,
+.dark-vertion .mh-github .calendar .float-left,
+.dark-vertion .mh-github .calendar .float-right {
+  color: #ddd;
+}
+.dark-vertion .mh-github .calendar text.wday,
+.dark-vertion .mh-github .calendar text.month,
+.dark-vertion .mh-github .calendar .ContributionCalendar-label text {
+  fill: #ddd;
+}
+.dark-vertion .github-calendar-wrap .calendar .contrib-column {
+  border-color: rgba(255, 255, 255, 0.15);
+}

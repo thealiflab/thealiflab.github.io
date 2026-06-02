@@ -44,6 +44,8 @@
   <link rel="stylesheet" href="assets/plugins/css/owl.css">
   <!-- Fancybox-->
   <link rel="stylesheet" href="assets/plugins/css/jquery.fancybox.min.css">
+  <!-- GitHub Calendar -->
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css">
   <!-- Custom CSS-->
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
@@ -597,6 +599,24 @@
               </div>
 
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+        ===================
+           GITHUB ACTIVITY
+        ===================
+        -->
+  <section class="mh-github" id="mh-github">
+    <div class="container">
+      <div class="row section-separator">
+        <div class="col-sm-12">
+          <h3 class="prodev-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">GitHub Activity</h3>
+          <div class="github-calendar-wrap wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+            <div class="calendar">Loading the data just for you&hellip;</div>
           </div>
         </div>
       </div>
@@ -1336,7 +1356,11 @@
   <script src="assets/myjs/projects.js"></script>
   <script src="assets/myjs/genai.js"></script>
 
-
+  <!-- GitHub Calendar -->
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+  <script>
+    GitHubCalendar(".calendar", "thealiflab", { responsive: true, tooltips: true });
+  </script>
 
 </body>
 
