@@ -5675,16 +5675,41 @@ body.dark-mode .reading-empty { color: #6e7681; }
  * ---------------------------------
  */
 
+/* ── Section title ── */
 .mh-github .prodev-title {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
+.gh-title-icon {
+  font-size: 26px;
+  color: #2c3e50;
+}
+
+body.dark-mode .gh-title-icon {
+  color: #e6edf3 !important;
+}
+
+/* ── Card wrapper — GitHub-style bordered card ── */
 .github-calendar-wrap {
   max-width: 960px;
   margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  padding: 20px 24px 14px;
+  /* Override library's contribution square colors with GitHub's actual palette */
+  --color-calendar-graph-day-bg: #ebedf0;
+  --color-calendar-graph-day-L1-bg: #9be9a8;
+  --color-calendar-graph-day-L2-bg: #40c463;
+  --color-calendar-graph-day-L3-bg: #30a14e;
+  --color-calendar-graph-day-L4-bg: #216e39;
 }
 
-/* Strip the library's default outer box; use CSS grid to reorder children */
+/* ── Strip library's own outer box; lay out with CSS grid ── */
 .github-calendar-wrap .calendar {
   border: none !important;
   border-radius: 0;
@@ -5695,35 +5720,35 @@ body.dark-mode .reading-empty { color: #6e7681; }
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-/* ── Row 1: stat boxes (auto-placed across the 3 columns) ── */
+/* ── Row 1: three stat boxes, auto-placed left → right ── */
 .github-calendar-wrap .calendar .contrib-column {
   grid-row: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 18px 12px;
+  padding: 14px 12px;
   text-align: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-  background: rgba(0, 0, 0, 0.02);
+  background: #f6f8fa;
+  border-top: 1px solid #d0d7de;
+  border-bottom: 1px solid #d0d7de;
+  border-right: 1px solid #d0d7de;
 }
 
 .github-calendar-wrap .calendar .contrib-column-first {
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 4px 0 0 4px;
+  border-left: 1px solid #d0d7de;
+  border-radius: 6px 0 0 6px;
 }
 
-/* Last stat column: js-yearly-contributions is child 1, so 3rd contrib-column = child 4 */
+/* js-yearly-contributions = child 1, so 3rd .contrib-column = child 4 */
 .github-calendar-wrap .calendar .contrib-column:nth-child(4) {
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 6px 6px 0;
 }
 
 .github-calendar-wrap .calendar .contrib-number {
   font-size: 22px;
   font-weight: 700;
-  color: #333;
+  color: #1f2328;
   line-height: 1.25;
   display: block;
   margin-bottom: 2px;
@@ -5731,99 +5756,122 @@ body.dark-mode .reading-empty { color: #6e7681; }
 
 .github-calendar-wrap .calendar .text-muted {
   font-size: 11px;
-  color: #767676;
-  line-height: 1.4;
+  color: #656d76;
+  line-height: 1.5;
 }
 
-/* ── Row 2: calendar grid — full width ── */
+/* ── Row 2: contribution grid, full width ── */
 .github-calendar-wrap .calendar .js-yearly-contributions {
   grid-column: 1 / -1;
   grid-row: 2;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  padding-top: 12px;
+  padding-top: 14px;
 }
 
-/* Strip the inner border/padding GitHub adds around the graph */
+/* Strip the inner GitHub border/padding around the grid */
 .github-calendar-wrap .calendar .graph-before-activity-overview {
   border: none !important;
   padding: 0 !important;
 }
 
-/* Remove the redundant "X contributions in the last year" heading (info already in stats) */
+/* Hide redundant heading (count already shown in first stat box) */
 .github-calendar-wrap .calendar h2.f4 {
   display: none;
 }
 
-/* Remove the blank spacer div the library adds */
+/* Remove blank spacer div the library injects */
 .github-calendar-wrap .calendar div.px-md-5 {
   height: 0;
 }
 
-/* Hide the accessibility skip link (not meaningful in this context) */
+/* Hide GitHub's accessibility skip link */
 .github-calendar-wrap .calendar a.show-on-focus,
 .github-calendar-wrap .calendar a[href^="#year-link-"] {
   display: none !important;
 }
 
-/* ── Row 3: legend footer — full width ── */
+/* Month / weekday label colour */
+.github-calendar-wrap .calendar text.wday,
+.github-calendar-wrap .calendar text.month,
+.github-calendar-wrap .calendar .ContributionCalendar-label {
+  fill: #57606a !important;
+}
+
+/* ── Row 3: legend footer, full width ── */
 .github-calendar-wrap .calendar .contrib-footer {
   grid-column: 1 / -1;
   grid-row: 3;
   height: auto;
-  padding: 8px 4px 0;
+  padding: 8px 0 0;
+  color: #656d76;
 }
 
-/* ── Dark mode ── */
+.github-calendar-wrap .calendar .left.text-muted {
+  color: #656d76 !important;
+}
+
+/* ── Dark mode — GitHub's exact dark palette ── */
+body.dark-mode .github-calendar-wrap {
+  background: #161b22;
+  border-color: #30363d;
+  --color-calendar-graph-day-bg: #21262d;
+  --color-calendar-graph-day-L1-bg: #0e4429;
+  --color-calendar-graph-day-L2-bg: #006d32;
+  --color-calendar-graph-day-L3-bg: #26a641;
+  --color-calendar-graph-day-L4-bg: #39d353;
+}
+
 body.dark-mode .github-calendar-wrap .calendar .contrib-column {
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
+  background: #0d1117;
+  border-color: #30363d;
 }
 
 body.dark-mode .github-calendar-wrap .calendar .contrib-number {
-  color: #e6edf3;
+  color: #e6edf3 !important;
 }
 
 body.dark-mode .github-calendar-wrap .calendar .text-muted {
   color: #8b949e !important;
 }
 
-body.dark-mode .github-calendar-wrap .calendar .left.text-muted {
-  color: #8b949e !important;
-}
-
+body.dark-mode .github-calendar-wrap .calendar .left.text-muted,
 body.dark-mode .github-calendar-wrap .calendar .contrib-footer {
-  color: #8b949e;
+  color: #8b949e !important;
 }
 
 body.dark-mode .github-calendar-wrap .calendar text.wday,
 body.dark-mode .github-calendar-wrap .calendar text.month,
 body.dark-mode .github-calendar-wrap .calendar .ContributionCalendar-label {
-  fill: #8b949e;
+  fill: #8b949e !important;
 }
 
 /* ── Responsive: stack stats vertically on small screens ── */
 @media (max-width: 600px) {
+  .github-calendar-wrap {
+    padding: 16px 14px 12px;
+  }
+
   .github-calendar-wrap .calendar {
     grid-template-columns: 1fr;
   }
 
   .github-calendar-wrap .calendar .contrib-column {
     grid-row: auto;
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid #d0d7de;
+    border-right: 1px solid #d0d7de;
     border-top: none;
     border-radius: 0;
   }
 
   .github-calendar-wrap .calendar .contrib-column-first {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 4px 4px 0 0;
+    border-top: 1px solid #d0d7de;
+    border-radius: 6px 6px 0 0;
   }
 
   .github-calendar-wrap .calendar .contrib-column:nth-child(4) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 4px 4px;
+    border-bottom: 1px solid #d0d7de;
+    border-radius: 0 0 6px 6px;
   }
 
   .github-calendar-wrap .calendar .js-yearly-contributions {
@@ -5837,6 +5885,6 @@ body.dark-mode .github-calendar-wrap .calendar .ContributionCalendar-label {
   }
 
   body.dark-mode .github-calendar-wrap .calendar .contrib-column {
-    border-color: rgba(255, 255, 255, 0.12);
+    border-color: #30363d;
   }
 }
