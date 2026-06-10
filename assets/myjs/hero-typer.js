@@ -3,8 +3,8 @@
   var roles = [
     'IT Professional',
     'Application Developer',
-    'Solopreneur',
     'Systems & Infrastructure Specialist',
+    'Plugin Developer',
     'Cloud & Identity Engineer',
     'System Administrator',
     'AI Product Builder',
