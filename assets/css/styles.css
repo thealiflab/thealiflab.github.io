@@ -5890,6 +5890,22 @@ body.dark-mode .reading-empty { color: #6e7681; }
 .gh-leg[data-l='3'] { background: var(--color-calendar-graph-day-L3-bg); }
 .gh-leg[data-l='4'] { background: var(--color-calendar-graph-day-L4-bg); }
 
+/* ── Profile link (bottom-left) ── */
+.gh-link {
+  align-self: flex-start;
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1089ff !important;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.gh-link:hover { text-decoration: underline; opacity: 0.85; }
+body.dark-mode .gh-link { color: #4ba3ff !important; }
+
 /* ── Dark mode (matches the site's #161b22 / #0d1117 dark palette) ── */
 body.dark-mode .gh-card {
   background: #161b22;
