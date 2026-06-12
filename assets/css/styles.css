@@ -5757,10 +5757,41 @@ body.dark-mode .reading-empty { color: #6e7681; }
   color: #57606a;
   min-height: 0;
   width: 100%;
+  max-width: 100%;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
+  display: block;
+  /* Single scroll container: grid scrolls horizontally, never clips
+     vertically (card grows to fit month/weekday labels). */
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: #1089ff transparent;
+}
+
+/* Thin brand-blue horizontal scrollbar (WebKit) */
+.gh-card .calendar::-webkit-scrollbar {
+  height: 8px;
+}
+.gh-card .calendar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.gh-card .calendar::-webkit-scrollbar-thumb {
+  background: #1089ff;
+  border-radius: 4px;
+}
+.gh-card .calendar::-webkit-scrollbar-thumb:hover {
+  background: #0a6fd6;
+}
+
+/* Keep the injected grid at natural size so columns stay 11px and the
+   whole table scrolls instead of compressing (which clipped labels). */
+.gh-card .calendar table.ContributionCalendar-grid,
+.gh-card .calendar .js-calendar-graph table {
+  width: max-content;
+  border-collapse: separate;
+  border-spacing: 3px;
+  margin: 0;
 }
 
 /* Hide the library's native chrome — we render our own stats + legend */
@@ -5776,13 +5807,13 @@ body.dark-mode .reading-empty { color: #6e7681; }
   height: 0;
 }
 
-/* Graph wrapper: full-width line, horizontal scroll on small screens */
+/* Graph wrapper: scrolling now lives on .calendar, so keep this at
+   natural width with no nested scrollbar. */
 .gh-card .calendar .js-yearly-contributions {
-  flex: 0 0 100%;
-  width: 100%;
+  flex: none;
+  width: auto;
   min-height: 0;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: visible;
 }
 
 .gh-card .calendar .js-calendar-graph {
@@ -5802,6 +5833,16 @@ body.dark-mode .reading-empty { color: #6e7681; }
   fill: #57606a !important;
 }
 
+/* Table-based labels (month row + weekday column): keep on one line and
+   give them room so they never clip against the day grid. */
+.gh-card .calendar td.ContributionCalendar-label {
+  white-space: nowrap;
+  line-height: 1;
+  padding: 0 4px 2px 0;
+  font-size: 11px;
+  color: #57606a !important;
+}
+
 /* ── Day cells: solid rounded squares (GitHub-style, blue scale) ──
    Background colour comes from the library's data-level rules, which
    read the --color-calendar-graph-day-* variables overridden above. */
@@ -5819,9 +5860,14 @@ body.dark-mode .reading-empty { color: #6e7681; }
   align-self: flex-end;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
   gap: 4px;
-  margin-top: 14px;
+  margin-top: 16px;
+  margin-left: auto;
   font-size: 11px;
+  line-height: 1;
   color: #57606a !important;
 }
 
@@ -5875,6 +5921,19 @@ body.dark-mode .gh-stat-label {
 body.dark-mode .gh-card .calendar,
 body.dark-mode .gh-legend,
 body.dark-mode .gh-legend-label {
+  color: #8b949e !important;
+}
+
+body.dark-mode .gh-card .calendar {
+  scrollbar-color: #4ba3ff transparent;
+}
+body.dark-mode .gh-card .calendar::-webkit-scrollbar-thumb {
+  background: #4ba3ff;
+}
+body.dark-mode .gh-card .calendar::-webkit-scrollbar-thumb:hover {
+  background: #1e7fd4;
+}
+body.dark-mode .gh-card .calendar td.ContributionCalendar-label {
   color: #8b949e !important;
 }
 
