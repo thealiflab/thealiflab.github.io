@@ -20,8 +20,9 @@ const AMAZON_AFFILIATE_TAG = "YOUR_AFFILIATE_TAG";
      coverImage  (required)  — path to a cover image, e.g.
                                "../assets/images/reading/atomic-habits.jpg"
                                (drop your cover files in that folder)
-     ratings     (required)  — your scores out of 5:
-                               { content, information, writing, overall }
+     ratings     (required)  — your scores out of 5. Include only the
+                               categories you have; missing rows are hidden:
+                               { content, information, writing, story, overall }
      amazonUrl   (required)  — plain Amazon product URL; the affiliate
                                tag above is appended automatically.
      notes       (optional)  — a short line of your thoughts.
@@ -36,18 +37,73 @@ const READING_BOOKS = [
     notes: "Practical, actionable framework for building tiny habits that compound."
   },
   {
-    title: "Deep Work",
-    author: "Cal Newport",
-    coverImage: "../assets/images/reading/deep-work.jpg",
-    ratings: { content: 5, information: 4, writing: 5, overall: 4.7 },
-    amazonUrl: "https://www.amazon.com/dp/1455586692",
-    notes: "A strong case for focus as a superpower in a distracted world."
+    title: "Blue Ocean Strategy",
+    author: "W. Chan Kim & Renée Mauborgne",
+    coverImage: "../assets/images/reading/blue-ocean-strategy.jpg",
+    ratings: { content: 5, information: 4, writing: 3 },
+    amazonUrl: ""
   },
   {
-    title: "The Pragmatic Programmer",
-    author: "David Thomas & Andrew Hunt",
-    coverImage: "../assets/images/reading/pragmatic-programmer.jpg",
-    ratings: { content: 5, information: 5, writing: 4, overall: 5 },
-    amazonUrl: "https://www.amazon.com/dp/0135957052"
+    title: "Crushing It!",
+    author: "Gary Vaynerchuk",
+    coverImage: "../assets/images/reading/crushing-it.jpg",
+    ratings: { content: 4, information: 5, writing: 3.5 },
+    amazonUrl: ""
+  },
+  {
+    title: "Eat That Frog!",
+    author: "Brian Tracy",
+    coverImage: "../assets/images/reading/eat-that-frog.jpg",
+    ratings: { content: 5, information: 5, writing: 5 },
+    amazonUrl: ""
+  },
+  {
+    title: "Google Guys",
+    author: "Richard L. Brandt",
+    coverImage: "../assets/images/reading/google-guys.jpg",
+    ratings: { content: 3, information: 4, writing: 4, overall: 3.5 },
+    amazonUrl: ""
+  },
+  {
+    title: "How to Win Friends and Influence People",
+    author: "Dale Carnegie",
+    coverImage: "../assets/images/reading/how-to-win-friends-and-influence-people.jpg",
+    ratings: { content: 4.5, information: 4.5, writing: 5, overall: 4.9 },
+    amazonUrl: ""
+  },
+  {
+    title: "The Alchemist",
+    author: "Paulo Coelho",
+    coverImage: "../assets/images/reading/the-alchemist.jpg",
+    ratings: { content: 5, information: 5, writing: 5, story: 4.5 },
+    amazonUrl: ""
+  },
+  {
+    title: "The Design of Everyday Things",
+    author: "Don Norman",
+    coverImage: "../assets/images/reading/the-design-of-everyday-things.jpg",
+    ratings: { content: 5, information: 5, writing: 5, overall: 5 },
+    amazonUrl: ""
+  },
+  {
+    title: "The Subtle Art of Not Giving a F*ck",
+    author: "Mark Manson",
+    coverImage: "../assets/images/reading/the-subtle-art.jpg",
+    ratings: { content: 5, information: 5, writing: 4, overall: 4.6 },
+    amazonUrl: ""
+  },
+  {
+    title: "The Theory of Everything",
+    author: "Stephen Hawking",
+    coverImage: "../assets/images/reading/the-theory-of-everything.jpg",
+    ratings: { content: 3, information: 4, writing: 3 },
+    amazonUrl: ""
+  },
+  {
+    title: "Who Moved My Cheese?",
+    author: "Spencer Johnson",
+    coverImage: "../assets/images/reading/who-moved-my-cheese.jpg",
+    ratings: { content: 5, information: 4, writing: 5 },
+    amazonUrl: ""
   }
 ];

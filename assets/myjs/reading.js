@@ -45,6 +45,7 @@
   }
 
   function ratingRow(label, value, isOverall) {
+    if (value === null || value === undefined || value === "") return "";
     return (
       '<div class="reading-rating-row' + (isOverall ? " reading-rating-overall" : "") + '">' +
         '<span class="reading-rating-label">' + label + "</span>" +
@@ -76,6 +77,7 @@
             ratingRow("Content", r.content) +
             ratingRow("Information", r.information) +
             ratingRow("Writing", r.writing) +
+            ratingRow("Story", r.story) +
             ratingRow("Overall", r.overall, true) +
           "</div>" +
           notes +
