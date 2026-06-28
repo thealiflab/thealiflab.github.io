@@ -2,12 +2,12 @@
   // Cycling role typer for the h5 subtitle
   var roles = [
     'IT Professional',
-    'Application Developer',
+    'Mobile App Developer',
+    'Cloud & AI Engineer',
     'Systems & Infrastructure Specialist',
     'Plugin Developer',
-    'Cloud & Identity Engineer',
     'System Administrator',
-    'AI Product Builder',
+    'AI and Automation Architect',
     'Machine Learning Engineer'
   ];
   var roleEl = document.getElementById('role-typing');
