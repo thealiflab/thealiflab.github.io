@@ -1752,6 +1752,12 @@ body {
   background: #1089ff;
 }
 
+#carouselExampleIndicators {
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 /*
     ==============
